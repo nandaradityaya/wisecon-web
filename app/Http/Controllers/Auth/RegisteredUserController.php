@@ -31,12 +31,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'avatar' => ['required', 'image', 'mimes:png,jpg,jpeg'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        if($request->hasFile('avatar')) {
+            // ambil pathnya dan simpan dalam folder avatars dan simpan secara public
+            $avatarPath = $request->file('avatar')->store('avatars', 'public'); 
+        } else {
+            $avatarPath = 'images/avatar-default.png'; // default image jika tdk ada image dr user
+        }
+
         $user = User::create([
             'name' => $request->name,
+            'avatar' => $avatarPath,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

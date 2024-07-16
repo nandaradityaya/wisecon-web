@@ -6,23 +6,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Service extends Model
+class Career extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'title',
-        'slug',
-        'thumbnail',
-        'excerpt',
         'body',
+        'slug',
+        'category',
+        'location',
     ];
 
-    public function key_features() {
-        return $this->hasMany(KeyFeature::class);
+    public function job_descriptions() {
+        return $this->hasMany(JobDescription::class);
     }
 
-    public function our_approaches() {
-        return $this->hasMany(OurApproach::class);
+    public function requirements() {
+        return $this->hasMany(Requirement::class);
     }
 }

@@ -6,23 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Service extends Model
+class Product extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'title',
+        'name',
         'slug',
-        'thumbnail',
-        'excerpt',
+        'thumbnail_1',
+        'thumbnail_2',
+        'client',
+        'project',
+        'service',
         'body',
     ];
-
-    public function key_features() {
-        return $this->hasMany(KeyFeature::class);
-    }
-
-    public function our_approaches() {
-        return $this->hasMany(OurApproach::class);
-    }
 }
