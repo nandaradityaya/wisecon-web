@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreHomeRequest;
+use App\Http\Requests\UpdateHomeRequest;
 use App\Models\HomeSlider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeSliderController extends Controller
 {
@@ -12,7 +15,8 @@ class HomeSliderController extends Controller
      */
     public function index()
     {
-        //
+        $homes = HomeSlider::orderByDesc('id')->get();
+        return view('admin.homes.index', compact('homes'));
     }
 
     /**
@@ -26,9 +30,26 @@ class HomeSliderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreHomeRequest $request)
     {
-        //
+        DB::transaction(function () use ($request){
+
+            
+            $validated = $request->validated();
+
+            if($request->hasFile('img_slider')) {
+                $imgSliderPath = $request->file('img_slider')->store('img_sliders', 'public'); 
+                $validated['img_slider'] = $imgSliderPath; 
+            } else {
+                $imgSliderPath = 'images/img_slider-default.png'; 
+            }
+
+        
+
+            HomeSlider::create($validated); 
+        });
+
+        return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully added new data.');
     }
 
     /**
@@ -50,16 +71,44 @@ class HomeSliderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HomeSlider $homeSlider)
+    public function update(UpdateHomeRequest $request, HomeSlider $home)
     {
-        //
+        DB::transaction(function () use ($request, $home){
+
+            
+            $validated = $request->validated();
+
+            if($request->hasFile('img_slider')) {
+                $imgSliderPath = $request->file('img_slider')->store('img_sliders', 'public'); 
+                $validated['img_slider'] = $imgSliderPath; 
+            } else {
+                $imgSliderPath = 'images/img_slider-default.png'; 
+            }
+
+        
+
+            $home->update($validated); 
+        });
+
+        return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully added new data.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HomeSlider $homeSlider)
+    public function destroy(HomeSlider $home)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $home->delete(); // ambil category mana yg di delete
+            DB::commit(); // commit deletenya
+
+            return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully delete data.');
+            
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('admin.homes.index')->with('error', 'something error'); // balikin ke index errornya dan munculkan pesan something error
+        }
     }
 }

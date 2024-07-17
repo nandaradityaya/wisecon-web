@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('frequently_asked_questions', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
-            $table->string('answer');
+            $table->text('question');
+            $table->text('answer');
             $table->softDeletes();
             $table->timestamps();
         });

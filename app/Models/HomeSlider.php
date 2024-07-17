@@ -11,7 +11,7 @@ class HomeSlider extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'slider_img',
+        'img_slider',
         'badge_text',
         'title',
         'sub_title',

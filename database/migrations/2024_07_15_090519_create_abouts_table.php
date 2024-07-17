@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('body');
             $table->string('img_about');
-            $table->string('vision');
-            $table->string('mission');
+            $table->text('vision');
+            $table->text('mission');
             $table->softDeletes();
             $table->timestamps();
         });

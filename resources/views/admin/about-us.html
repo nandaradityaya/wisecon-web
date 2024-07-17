@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en" class="color-sidebar sidebarcolor3">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="assets/images/ico-wisesa.svg" type="image/png" />
+	<!--plugins-->
+	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="assets/plugins/fullcalendar/css/main.min.css" rel="stylesheet" />
+	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link href="assets/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/libraries/gijgo/css/gijgo.min.css">
+	<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+	<link href="assets/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+	<link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.time.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.date.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
+	<!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+	<script src="assets/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="assets/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<!-- <link rel="stylesheet" href="assets/css/dark-theme.css" /> -->
+	<link rel="stylesheet" href="assets/css/semi-dark.css" />
+	<link rel="stylesheet" href="assets/css/header-colors.css" />
+	<title>Wisesa Consulting</title>
+</head>
+
+<body>
+	<!--wrapper-->
+	<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+				<div style="margin-left: 40px;">
+					<img src="assets/images/logo-wisesa.svg" class="logo-icon" alt="logo icon">
+				</div>
+				<!-- <div style="margin-left: 40px;">
+					<a href="dashboard.html" class="logo-text" style="font-family: 'Segoe UI Black';">
+						<span style="font-size: larger; font-style: italic">DCT</span>
+						<span style="font-size: 15px; text-decoration:overline ">WEB</span>
+					</a>
+				</div> -->
+				<div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
+				</div>
+			</div>
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
+				<li class="menu-label">Menu</li>
+				<li>
+					<a href="home-slider.html">
+						<div class="parent-icon"><i class='bx bx-home'></i>
+						</div>
+						<div class="menu-title">Home Slider</div>
+					</a>
+				</li>
+				<li>
+					<a href="about-us.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">About Us</div>
+					</a>
+				</li>
+				<li>
+					<a href="service.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">Service</div>
+					</a>
+				</li>
+				<li>
+					<a href="product.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">Product</div>
+					</a>
+				</li>
+				<li>
+					<a href="client.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">Client</div>
+					</a>
+				</li>
+				<li>
+					<a href="career.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">Career</div>
+					</a>
+				</li>
+				<li>
+					<a href="contact.html">
+						<div class="parent-icon"><i class='bx bx-square'></i>
+						</div>
+						<div class="menu-title">Contact</div>
+					</a>
+				</li>
+			</ul>
+			<!--end navigation-->
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+		<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center" >
+							
+							<li class="nav-item dropdown dropdown-large" style="display: none;">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
+									<i class='lni lni-headphone'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title">•</p>
+											<p class="msg-header-clear ms-auto">•</p>
+										</div>
+									</a>
+									<div class="header-message-list">
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="user-online">
+													<img src="assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">• <span class="msg-time float-end">•</span></h6>
+													<p class="msg-info">•</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer">•</div>
+									</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large" style="display: none;">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">7</span>
+									<i class='bx bx-bell'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title">•</p>
+											<p class="msg-header-clear ms-auto">•</p>
+										</div>
+									</a>
+									<div class="header-notifications-list">
+										<a class="dropdown-item" href="javascript:;">
+											<div class="d-flex align-items-center">
+												<div class="notify bg-light-primary text-primary"><i class="bx bx-group"></i>
+												</div>
+												<div class="flex-grow-1">
+													<h6 class="msg-name">•<span class="msg-time float-end">•</span></h6>
+													<p class="msg-info">•</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer">•</div>
+									</a>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="user-box dropdown">
+						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="assets/images/avatars/nanda.jpg" class="user-img" alt="user avatar">
+							<div class="user-info ps-3">
+								<p class="user-name mb-0">Nanda Raditya</p>
+								<p class="designattion mb-0">UI/UX Designer</p>
+							</div>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+							</li>
+							
+								<div class="dropdown-divider mb-0"></div>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">About Us</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">About Us</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+
+				<div class="card radius-10">
+					<div class="card-body">
+						<div class="d-flex align-items-center justify-content-between mb-3">
+							<div>
+								<h5 class="font-weight-bold mb-0">About Us</h5>
+							</div>
+							<div class="mt-2">
+								<button type="button" class="btn btn-primary radius-8 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modalAddNew"><i class="bx bx-plus"></i>Add New</button>
+							</div>
+						</div>
+						<div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+							<div class="d-flex align-items-center">
+								<div class="font-35 text-success"><i class="bx bxs-check-circle"></i>
+								</div>
+								<div class="ms-3">
+									<h6 class="mb-0 text-success">Success</h6>
+									<div>Congrats! you successfully add new data</div>
+								</div>
+							</div>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						<p class="mb-0 mt-3 text-black d-flex align-items-center justify-content-center d-lg-none d-md-block d-sm-block"><i class="lni lni-whatsapp text-success me-2"></i>Credit: 816,247 (Can Invite 1484 People)</p>
+						<div class="table-responsive">
+							<div id="printbar" style="float:right"></div>
+							<br>
+							<table id="aboutUs" class="table mb-0 align-middle" style="width:100%">
+								<thead class="table-light">
+									<tr>
+										<th>No</th>
+										<th>About Us</th>
+										<th>Image</th>
+										<th>Vision</th>
+										<th>Mission</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>We Are a Creative IT Solutions Agency</td>
+										<td>
+											<img src="assets/images/bg-themes/1.png" width="100" alt="">
+										</td>
+										<td>Preparing for your success with the best IT Services</td>
+										<td>We deliver exceptional solutions to meet all your needs with excellence and dedication</td>
+										<td>
+											<div class="d-flex order-actions">
+												<a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalAddNew"><i class="bx bxs-edit"></i></a>
+												<a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete"><i class="bx bxs-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Modal Box Add New -->
+				<div class="modal fade" id="modalAddNew" tabindex="-1"
+					aria-labelledby="modalAddNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content radius-8">
+							<div class="modal-header">
+								<h5 class="modal-title" id="modalAddNewLabel">Add New Data</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								
+								<div class="mb-3">
+									<label for="aboutUs" class="form-label">About Us</label>
+									<input type="text" class="form-control" id="aboutUs" placeholder="About Us...">
+								</div>
+								<div class="mb-3">
+									<label for="formFile" class="form-label">Image</label>
+									<input class="form-control" type="file" id="formFile">
+								</div>
+								<div class="mb-3">
+									<label for="vision" class="form-label">Vision</label>
+									<input type="text" class="form-control" id="vision" placeholder="Vision...">
+								</div>
+								<div class="mb-3">
+									<label for="mission" class="form-label">Mission</label>
+									<input type="text" class="form-control" id="mission" placeholder="Mission...">
+								</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary radius-6"
+									data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary radius-6">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<!-- Modal Box Delete -->
+				<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="modalDeleteLabel">Delete Data</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								Are you sure want to delete this data?
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary radius-8"
+									data-bs-dismiss="modal">Cancel</button>
+								<button type="button" class="btn btn-danger radius-8">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2024. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+	<!-- Bootstrap JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="assets/plugins/fullcalendar/js/main.min.js"></script>
+	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="assets/libraries/gijgo/js/gijgo.min.js"></script>
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
+	<script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+	<script src="assets/plugins/datetimepicker/js/legacy.js"></script>
+	<script src="assets/plugins/datetimepicker/js/picker.js"></script>
+	<script src="assets/plugins/datetimepicker/js/picker.time.js"></script>
+	<script src="assets/plugins/datetimepicker/js/picker.date.js"></script>
+	<script src="assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
+	<script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+	
+	<script>
+		$(document).ready(function () {
+			var table = $('#aboutUs').DataTable({
+			});
+		});
+	</script>
+
+
+	<!--app JS-->
+	<script src="assets/js/app.js"></script>
+</body>
+
+</html>

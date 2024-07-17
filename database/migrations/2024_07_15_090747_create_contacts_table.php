@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('link_map');
-            $table->string('address');
+            $table->text('link_map');
+            $table->text('address');
             $table->string('email');
             $table->string('phone_number');
             $table->softDeletes();
