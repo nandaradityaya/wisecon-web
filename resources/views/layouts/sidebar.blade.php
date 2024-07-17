@@ -91,6 +91,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li>
+                    <a href="{{ route('admin.contacts.index') }}" class="{{ request()->routeIs('admin.contacts.index') ? 'mm-active' : '' }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Contacts') }}</div>
+                    </a>
+                </li>
+                @endrole
 
 				<li>
 					<a href="product.html">
@@ -104,13 +112,6 @@
 						<div class="parent-icon"><i class='bx bx-square'></i>
 						</div>
 						<div class="menu-title">Career</div>
-					</a>
-				</li>
-				<li>
-					<a href="contact.html">
-						<div class="parent-icon"><i class='bx bx-square'></i>
-						</div>
-						<div class="menu-title">Contact</div>
 					</a>
 				</li>
 			</ul>
@@ -249,6 +250,24 @@
 		$(document).ready(function () {
 			var table = $('#service').DataTable({
 			});
+		});
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			setTimeout(function() {
+				// Close the alert
+				var successAlert = document.getElementById('success-alert');
+				if (successAlert) {
+					var bsAlert = new bootstrap.Alert(successAlert);
+					bsAlert.close();
+				}
+
+				var errorAlert = document.getElementById('error-alert');
+				if (errorAlert) {
+					var bsAlert = new bootstrap.Alert(errorAlert);
+					bsAlert.close();
+				}
+			}, 4000);
 		});
 	</script>
 

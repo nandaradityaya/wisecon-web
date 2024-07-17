@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -12,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::orderByDesc('id')->get();
+        return view('admin.contacts.index', compact('contacts'));
     }
 
     /**
@@ -26,9 +30,17 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreContactRequest $request)
     {
-        //
+        DB::transaction(function () use ($request){
+
+            
+            $validated = $request->validated();
+
+            Contact::create($validated); 
+        });
+
+        return redirect()->route('admin.contacts.index')->with('success', 'Congrats! You successfully added new contact.');
     }
 
     /**
@@ -50,9 +62,17 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Contact $contact)
+    public function update(UpdateContactRequest $request, Contact $contact)
     {
-        //
+        DB::transaction(function () use ($request, $contact){
+
+            
+            $validated = $request->validated();
+
+            $contact->update($validated); 
+        });
+
+        return redirect()->route('admin.contacts.index')->with('success', 'Congrats! You successfully edit FAQ.');
     }
 
     /**
@@ -60,6 +80,17 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $contact->delete();
+            DB::commit(); 
+
+            return redirect()->route('admin.contacts.index')->with('success', 'Congrats! You successfully delete data.');
+            
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('admin.contacts.index')->with('error', 'something error'); 
+        }
     }
 }

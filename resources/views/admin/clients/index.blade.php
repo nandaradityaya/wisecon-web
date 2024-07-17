@@ -28,7 +28,7 @@
         </div>
         
         @if(session('success'))
-        <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+        <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2" id="success-alert">
             <div class="d-flex align-items-center">
                 <div class="font-35 text-success"><i class="bx bxs-check-circle"></i></div>
                 <div class="ms-3">
@@ -41,7 +41,7 @@
         @endif
 
         @if(session('error'))
-        <div class="alert border-0 border-start border-5 border-danger alert-dismissible fade show py-2">
+        <div class="alert border-0 border-start border-5 border-danger alert-dismissible fade show py-2" id="error-alert">
             <div class="d-flex align-items-center">
                 <div class="font-35 text-danger"><i class="bx bxs-x-circle"></i></div>
                 <div class="ms-3">
