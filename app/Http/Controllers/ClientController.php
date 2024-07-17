@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -12,7 +15,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::orderByDesc('id')->get();
+        return view('admin.clients.index', compact('clients'));
     }
 
     /**
@@ -26,9 +30,26 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreClientRequest $request)
     {
-        //
+        DB::transaction(function () use ($request){
+
+            
+            $validated = $request->validated();
+
+            if($request->hasFile('client_img')) {
+                $imgSliderPath = $request->file('client_img')->store('client_imgs', 'public'); 
+                $validated['client_img'] = $imgSliderPath; 
+            } else {
+                $imgSliderPath = 'images/client_img-default.png'; 
+            }
+
+        
+
+            Client::create($validated); 
+        });
+
+        return redirect()->route('admin.clients.index')->with('success', 'Congrats! You successfully added new client.');
     }
 
     /**
@@ -50,9 +71,26 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(UpdateClientRequest $request, Client $client)
     {
-        //
+        DB::transaction(function () use ($request, $client){
+
+            
+            $validated = $request->validated();
+
+            if($request->hasFile('client_img')) {
+                $imgSliderPath = $request->file('client_img')->store('client_imgs', 'public'); 
+                $validated['client_img'] = $imgSliderPath; 
+            } else {
+                $imgSliderPath = 'images/client_img-default.png'; 
+            }
+
+        
+
+            $client->update($validated); 
+        });
+
+        return redirect()->route('admin.clients.index')->with('success', 'Congrats! You successfully edit client.');
     }
 
     /**
@@ -60,6 +98,17 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $client->delete(); 
+            DB::commit(); 
+
+            return redirect()->route('admin.clients.index')->with('success', 'Congrats! You successfully delete client.');
+            
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('admin.clients.index')->with('error', 'something error'); 
+        }
     }
 }

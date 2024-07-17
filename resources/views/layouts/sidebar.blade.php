@@ -83,19 +83,20 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li>
+                    <a href="{{ route('admin.clients.index') }}" class="{{ request()->routeIs('admin.clients.index') ? 'mm-active' : '' }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Clients') }}</div>
+                    </a>
+                </li>
+                @endrole
 
 				<li>
 					<a href="product.html">
 						<div class="parent-icon"><i class='bx bx-square'></i>
 						</div>
 						<div class="menu-title">Product</div>
-					</a>
-				</li>
-				<li>
-					<a href="client.html">
-						<div class="parent-icon"><i class='bx bx-square'></i>
-						</div>
-						<div class="menu-title">Client</div>
 					</a>
 				</li>
 				<li>
