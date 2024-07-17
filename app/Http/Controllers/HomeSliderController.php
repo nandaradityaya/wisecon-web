@@ -101,14 +101,14 @@ class HomeSliderController extends Controller
         DB::beginTransaction();
 
         try {
-            $home->delete(); // ambil category mana yg di delete
-            DB::commit(); // commit deletenya
+            $home->delete(); 
+            DB::commit(); 
 
             return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully delete data.');
             
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->route('admin.homes.index')->with('error', 'something error'); // balikin ke index errornya dan munculkan pesan something error
+            return redirect()->route('admin.homes.index')->with('error', 'something error'); 
         }
     }
 }

@@ -75,6 +75,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li>
+                    <a href="{{ route('admin.faqs.index') }}" class="{{ request()->routeIs('admin.faqs.index') ? 'mm-active' : '' }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __("FAQ's") }}</div>
+                    </a>
+                </li>
+                @endrole
 
 				<li>
 					<a href="product.html">
