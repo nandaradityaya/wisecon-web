@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
@@ -16,9 +17,9 @@ Route::get('/about', [FrontController::class, 'about'])->name('front.about');
 Route::get('/service', [FrontController::class, 'service'])->name('front.service');
 Route::get('/service/{service:slug}', [FrontController::class, 'servicesDetail'])->name('front.service-details');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/homes', function () {
+    return view('admin.homes.index');
+})->middleware(['auth', 'verified'])->name('admin.homes.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('careers', CareerController::class)->middleware('role:owner');
         Route::resource('clients', ClientController::class)->middleware('role:owner');
         Route::resource('contacts', ContactController::class)->middleware('role:owner'); 
+        Route::resource('teams', TeamController::class)->middleware('role:owner'); 
     });
 });
 

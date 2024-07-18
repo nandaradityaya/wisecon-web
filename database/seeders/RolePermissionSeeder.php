@@ -26,9 +26,9 @@ class RolePermissionSeeder extends Seeder
 
         $userOwner = User::create([
             'name' => 'Nanda Raditya',
-            'avatar' => 'assets/img/nanda.jpg',
-            'email' => 'nandaraditya80@gmail.com',
-            'password' => bcrypt('20000905')
+            'avatar' => 'assets/img/logo-wisesa.svg',
+            'email' => 'wisesa-consulting@owner.com',
+            'password' => bcrypt('Wisesaconsulting2024$')
         ]);
 
         $userOwner->assignRole($ownerRole); 

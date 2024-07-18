@@ -90,7 +90,7 @@ class HomeSliderController extends Controller
             $home->update($validated); 
         });
 
-        return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully added new data.');
+        return redirect()->route('admin.homes.index')->with('success', 'Congrats! You successfully edit data.');
     }
 
     /**

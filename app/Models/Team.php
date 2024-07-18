@@ -11,6 +11,7 @@ class Team extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'img_team',
         'name',
         'title',
         'instagram',
