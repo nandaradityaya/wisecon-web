@@ -53,7 +53,6 @@
         </div>
         @endif
 
-        <p class="mb-0 mt-3 text-black d-flex align-items-center justify-content-center d-lg-none d-md-block d-sm-block"><i class="lni lni-whatsapp text-success me-2"></i>Credit: 816,247 (Can Invite 1484 People)</p>
         <div class="table-responsive">
             <div id="printbar" style="float:right"></div>
             <br>

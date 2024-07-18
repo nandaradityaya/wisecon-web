@@ -129,7 +129,7 @@ class ServiceController extends Controller
 
             // cek keyfeatures
             if(!empty($validated['key_features'])) {
-                $service->key_features()->delete(); // delete dulu keyfeaturesnya baru deh update dgn yg baru
+                $service->key_features()->delete(); // delete first and update key_features
                 
                 // looping
                 foreach($validated['key_features'] as $keyfeatureText) {
@@ -142,7 +142,7 @@ class ServiceController extends Controller
 
             // cek our approaches
             if(!empty($validated['our_approaches'])) {
-                $service->our_approaches()->delete(); // delete dulu keyfeaturesnya baru deh update dgn yg baru
+                $service->our_approaches()->delete(); // delete first and update our_approaches
                 
                 // looping
                 foreach($validated['our_approaches'] as $ourApproachesText) {

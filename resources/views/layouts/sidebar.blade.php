@@ -115,13 +115,14 @@
                     </a>
                 </li>
                 @endrole
-				<li>
-					<a href="career.html">
-						<div class="parent-icon"><i class='bx bx-square'></i>
-						</div>
-						<div class="menu-title">Career</div>
-					</a>
-				</li>
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.careers.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.careers.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Career') }}</div>
+                    </a>
+                </li>
+                @endrole
 			</ul>
 			<!--end navigation-->
 		</div>
@@ -287,37 +288,91 @@
 			input.type = 'text';
 			input.name = 'key_features[]';
 			input.className = 'form-control mb-2';
-			input.placeholder = 'Write your copywriting';
+			input.placeholder = 'Key Features...';
 			container.appendChild(input);
 		});
+	</script>
 
+	<script>
 		document.getElementById('edit-key-feature').addEventListener('click', function() {
 			var container = document.getElementById('edit-key-features-container');
 			var input = document.createElement('input');
 			input.type = 'text';
 			input.name = 'key_features[]';
 			input.className = 'form-control mb-2';
-			input.placeholder = 'Write your copywriting';
+			input.placeholder = 'Key Features...';
 			container.appendChild(input);
 		});
+	</script>
 
+	<script>
 		document.getElementById('add-our-approaches').addEventListener('click', function() {
 			var container = document.getElementById('our-approaches-container');
 			var input = document.createElement('input');
 			input.type = 'text';
 			input.name = 'our_approaches[]';
 			input.className = 'form-control mb-2';
-			input.placeholder = 'Write your copywriting';
+			input.placeholder = 'Our Approach...';
 			container.appendChild(input);
 		});
+	</script>
 
+	<script>
 		document.getElementById('edit-our-approaches').addEventListener('click', function() {
-			var container = document.getElementById('edit-our-approachess-container');
+			var container = document.getElementById('edit-our-approaches-container');
 			var input = document.createElement('input');
 			input.type = 'text';
 			input.name = 'our_approaches[]';
 			input.className = 'form-control mb-2';
-			input.placeholder = 'Write your copywriting';
+			input.placeholder = 'Our Approach...';
+			container.appendChild(input);
+		});
+	</script>
+
+	<script>
+		document.getElementById('add-job-descriptions').addEventListener('click', function() {
+			var container = document.getElementById('job-descriptions-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'job_descriptions[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Job Description...';
+			container.appendChild(input);
+		});
+	</script>
+
+	<script>
+		document.getElementById('edit-job-descriptions').addEventListener('click', function() {
+			var container = document.getElementById('edit-job-descriptions-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'job_descriptions[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Job Description...';
+			container.appendChild(input);
+		});
+	</script>
+
+	<script>
+		document.getElementById('add-requirements').addEventListener('click', function() {
+			var container = document.getElementById('requirements-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'requirements[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Job Description...';
+			container.appendChild(input);
+		});
+	</script>
+
+	<script>
+		document.getElementById('edit-requirements').addEventListener('click', function() {
+			var container = document.getElementById('edit-requirements-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'requirements[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Requirement...';
 			container.appendChild(input);
 		});
 	</script>
