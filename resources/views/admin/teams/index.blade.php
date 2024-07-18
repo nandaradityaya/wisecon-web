@@ -75,7 +75,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>
-                            <img src="{{ Storage::url($team->img_team) }}" width="100" alt="">
+                            <img src="{{ Storage::url($team->img_team) }}" width="100" alt="image team wisesa consulting">
                         </td>
                         <td>{{ $team->name }}</td>
                         <td>{{ $team->title }}</td>

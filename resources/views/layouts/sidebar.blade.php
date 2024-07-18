@@ -256,7 +256,7 @@
 	
 	<script>
 		$(document).ready(function () {
-			var table = $('#service').DataTable({
+			var table = $('#serviceTable').DataTable({
 			});
 		});
 		
@@ -278,6 +278,47 @@
 					bsAlert.close();
 				}
 			}, 4000);
+		});
+	</script>
+	<script>
+		document.getElementById('add-key-feature').addEventListener('click', function() {
+			var container = document.getElementById('key-features-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'key_features[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Write your copywriting';
+			container.appendChild(input);
+		});
+
+		document.getElementById('edit-key-feature').addEventListener('click', function() {
+			var container = document.getElementById('edit-key-features-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'key_features[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Write your copywriting';
+			container.appendChild(input);
+		});
+
+		document.getElementById('add-our-approaches').addEventListener('click', function() {
+			var container = document.getElementById('our-approachess-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'our_approaches[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Write your copywriting';
+			container.appendChild(input);
+		});
+
+		document.getElementById('edit-our-approaches').addEventListener('click', function() {
+			var container = document.getElementById('edit-our-approachess-container');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.name = 'our_approaches[]';
+			input.className = 'form-control mb-2';
+			input.placeholder = 'Write your copywriting';
+			container.appendChild(input);
 		});
 	</script>
 

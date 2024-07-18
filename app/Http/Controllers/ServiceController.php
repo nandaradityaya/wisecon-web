@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreServiceRequest;
+use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ServiceController extends Controller
 {
@@ -28,7 +31,7 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreServiceRequest $request)
     {
         DB::transaction(function () use ($request){
 
@@ -42,12 +45,35 @@ class ServiceController extends Controller
                 $thumbnailPath = 'images/thumbnail-default.png'; 
             }
 
+            $validated['slug'] = Str::slug($validated['title']);
         
 
-            Service::create($validated); 
+            $service = Service::create($validated); 
+
+            // cek keyfetrues
+            if(!empty($validated['key_features'])) {
+                // looping for insert data
+                foreach($validated['key_features'] as $keyfeatureText) {
+                    // langsung ambil dan create key_features karna dia berelasi
+                    $service->key_features()->create([
+                        'body' => $keyfeatureText
+                    ]);
+                }
+            }
+
+            // cek our approaches
+            if(!empty($validated['our_approaches'])) {
+                // looping for insert data
+                foreach($validated['our_approaches'] as $ourApproachesText) {
+                    // langsung ambil dan create our_approaches karna dia berelasi
+                    $service->our_approaches()->create([
+                        'body' => $ourApproachesText
+                    ]);
+                }
+            }
         });
 
-        return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully added new data.');
+        return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully added new service.');
     }
 
     /**
@@ -69,7 +95,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service)
+    public function update(UpdateServiceRequest $request, Service $service)
     {
         DB::transaction(function () use ($request, $service){
 
@@ -83,12 +109,38 @@ class ServiceController extends Controller
                 $thumbnailPath = 'images/thumbnail-default.png'; 
             }
 
-        
+            $validated['slug'] = Str::slug($validated['title']);
 
             $service->update($validated); 
+
+            // cek keyfeatures
+            if(!empty($validated['key_features'])) {
+                $service->key_features()->delete(); // delete dulu keyfeaturesnya baru deh update dgn yg baru
+                
+                // looping
+                foreach($validated['key_features'] as $keyfeatureText) {
+                    // langsung ambil dan create key_features karna dia berelasi
+                    $service->key_features()->create([
+                        'body' => $keyfeatureText
+                    ]);
+                }
+            }
+
+            // cek our approaches
+            if(!empty($validated['our_approaches'])) {
+                $service->our_approaches()->delete(); // delete dulu keyfeaturesnya baru deh update dgn yg baru
+                
+                // looping
+                foreach($validated['our_approaches'] as $ourApproachesText) {
+                    // langsung ambil dan create our_approaches karna dia berelasi
+                    $service->our_approaches()->create([
+                        'body' => $ourApproachesText
+                    ]);
+                }
+            }
         });
 
-        return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully added new data.');
+        return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully edit service.');
     }
 
     /**
@@ -96,6 +148,17 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $service->delete(); 
+            DB::commit(); 
+
+            return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully delete data.');
+            
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('admin.services.index')->with('error', 'something error'); 
+        }
     }
 }
