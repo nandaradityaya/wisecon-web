@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrequentlyAskedQuestionController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('clients', ClientController::class)->middleware('role:owner');
         Route::resource('contacts', ContactController::class)->middleware('role:owner'); 
         Route::resource('teams', TeamController::class)->middleware('role:owner'); 
+        Route::resource('products', ProductController::class)->middleware('role:owner'); 
     });
 });
 

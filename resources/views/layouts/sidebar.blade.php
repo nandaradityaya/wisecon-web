@@ -107,14 +107,14 @@
                     </a>
                 </li>
                 @endrole
-
-				<li>
-					<a href="product.html">
-						<div class="parent-icon"><i class='bx bx-square'></i>
-						</div>
-						<div class="menu-title">Product</div>
-					</a>
-				</li>
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.products.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.products.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Product') }}</div>
+                    </a>
+                </li>
+                @endrole
 				<li>
 					<a href="career.html">
 						<div class="parent-icon"><i class='bx bx-square'></i>
@@ -259,6 +259,8 @@
 			var table = $('#service').DataTable({
 			});
 		});
+		
+		
 	</script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {

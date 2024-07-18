@@ -38,10 +38,10 @@ class TeamController extends Controller
             $validated = $request->validated();
 
             if($request->hasFile('img_team')) {
-                $imgSliderPath = $request->file('img_team')->store('img_teams', 'public'); 
-                $validated['img_team'] = $imgSliderPath; 
+                $imgTeamPath = $request->file('img_team')->store('img_teams', 'public'); 
+                $validated['img_team'] = $imgTeamPath; 
             } else {
-                $imgSliderPath = 'images/img_team-default.png'; 
+                $imgTeamPath = 'images/img_team-default.png'; 
             }
 
         
@@ -79,10 +79,10 @@ class TeamController extends Controller
             $validated = $request->validated();
 
             if($request->hasFile('img_team')) {
-                $imgSliderPath = $request->file('img_team')->store('img_teams', 'public'); 
-                $validated['img_team'] = $imgSliderPath; 
+                $imgTeamPath = $request->file('img_team')->store('img_teams', 'public'); 
+                $validated['img_team'] = $imgTeamPath; 
             } else {
-                $imgSliderPath = 'images/img_team-default.png'; 
+                $imgTeamPath = 'images/img_team-default.png'; 
             }
 
         

@@ -3,13 +3,13 @@
 @section('admin')
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-    <div class="breadcrumb-title pe-3">Teams</div>
+    <div class="breadcrumb-title pe-3">Products</div>
     <div class="ps-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Teams</li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
             </ol>
         </nav>
     </div>
@@ -20,7 +20,7 @@
     <div class="card-body">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
-                <h5 class="font-weight-bold mb-0">Teams</h5>
+                <h5 class="font-weight-bold mb-0">Products</h5>
             </div>
             <div class="mt-2">
                 <button type="button" class="btn btn-primary radius-8 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modalAddNew"><i class="bx bx-plus"></i>Add New</button>
@@ -53,39 +53,43 @@
         </div>
         @endif
 
-        <p class="mb-0 mt-3 text-black d-flex align-items-center justify-content-center d-lg-none d-md-block d-sm-block"><i class="lni lni-whatsapp text-success me-2"></i>Credit: 816,247 (Can Invite 1484 People)</p>
         <div class="table-responsive">
             <div id="printbar" style="float:right"></div>
             <br>
-            <table id="homeSlider" class="table mb-0 align-middle" style="width:100%">
+            <table id="productTable" class="table mb-0 align-middle" style="width:100%">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
-                        <th>Image</th>
                         <th>Name</th>
-                        <th>Title</th>
-                        <th>Linkedin</th>
-                        <th>Instagram</th>
-                        <th>Behance</th>
+                        <th>Thumbnail 1</th>
+                        <th>Thumbnail 2</th>
+                        <th>Client</th>
+                        <th>Project</th>
+                        <th>Service</th>
+                        <th>Body</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($teams as $team)
+                    @foreach ($products as $product)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $product->name }}</td>
                         <td>
-                            <img src="{{ Storage::url($team->img_team) }}" width="100" alt="">
+                            <img src="{{ Storage::url($product->thumbnail_1) }}" width="100" alt="product wisesa consulting">
                         </td>
-                        <td>{{ $team->name }}</td>
-                        <td>{{ $team->title }}</td>
-                        <td>{{ $team->linkedin }}</td>
-                        <td>{{ $team->instagram }}</td>
-                        <td>{{ $team->behance }}</td>
+                        <td>
+                            <img src="{{ Storage::url($product->thumbnail_2) }}" width="100" alt="product wisesa consulting">
+                        </td>
+                        <td>{{ $product->client }}</td>
+                        <td>{{ $product->project }}</td>
+                        <td>{{ $product->service }}</td>
+                        <td>{{ $product->body }}</td>
                         <td>
                             <div class="d-flex order-actions">
-                                <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $team->id }}"><i class="bx bxs-edit"></i></a>
-                                <a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $team->id }}"><i class="bx bxs-trash"></i></a> 
+                                <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $product->id }}"><i class="bx bxs-edit"></i></a>
+                                <a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $product->id }}"><i class="bx bxs-trash"></i></a> 
                             </div>
                         </td>
                     </tr>
@@ -95,46 +99,51 @@
                 </tbody>
             </table>
 
-            @foreach ($teams as $team)
+            @foreach ($products as $product)
                  <!-- Modal Box Edit -->
-                 <div class="modal fade" id="modalEdit{{ $team->id }}" tabindex="-1"
-                    aria-labelledby="modalEditLabel{{ $team->id }}" aria-hidden="true">
+                 <div class="modal fade" id="modalEdit{{ $product->id }}" tabindex="-1"
+                    aria-labelledby="modalEditLabel{{ $product->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content radius-8">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modalEditLabel{{ $team->id }}">Edit Team</h5>
+                                    <h5 class="modal-title" id="modalEditLabel{{ $product->id }}">Edit Product</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
 
-                            <form method="POST" action="{{ route('admin.teams.update', $team->id) }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin.products.update', $product->id) }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control mb-2" type="file" id="formFile" name="img_team">
-                                        <img src="{{ Storage::url($team->img_team) }}" width="100" alt="image team wisesa consulting">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" value="{{ $team->name }}" name="name">
+                                        <input type="text" class="form-control" id="name" value="{{ $product->name }}" name="name">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control" id="title" value="{{ $team->title }}" name="title">
+                                        <label for="formFile" class="form-label">Image 1</label>
+                                        <input class="form-control mb-2" type="file" id="formFile" name="thumbnail_1">
+                                        <img src="{{ Storage::url($product->thumbnail_1) }}" width="100" alt="image team wisesa consulting">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="linkedin" class="form-label">Linkedin</label>
-                                        <input type="text" class="form-control" id="linkedin" value="{{ $team->linkedin }}" name="linkedin">
+                                        <label for="formFile" class="form-label">Image 2</label>
+                                        <input class="form-control mb-2" type="file" id="formFile" name="thumbnail_2">
+                                        <img src="{{ Storage::url($product->thumbnail_2) }}" width="100" alt="image team wisesa consulting">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="instagram" class="form-label">Instagram</label>
-                                        <input type="text" class="form-control" id="instagram" value="{{ $team->instagram }}" name="instagram">
+                                        <label for="client" class="form-label">Client</label>
+                                        <input type="text" class="form-control" id="client" value="{{ $product->client }}" name="client">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="behance" class="form-label">Behance</label>
-                                        <input type="text" class="form-control" id="behance" value="{{ $team->behance }}" name="behance">
+                                        <label for="project" class="form-label">Project</label>
+                                        <input type="text" class="form-control" id="project" value="{{ $product->project }}" name="project">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="serviceProduct" class="form-label">Service</label>
+                                        <input type="text" class="form-control" id="serviceProduct" value="{{ $product->service }}" name="service">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="body" class="form-label">Description</label>
+                                        <textarea type="text" class="form-control" id="body" name="body" rows="3">{{ $product->body }}</textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -148,11 +157,11 @@
                 </div>
 
                 <!-- Modal Box Delete -->
-                <div class="modal fade" id="modalDelete{{ $team->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $team->id }}" aria-hidden="true">
+                <div class="modal fade" id="modalDelete{{ $product->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $product->id }}" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalDeleteLabel{{ $team->id }}">Delete Data</h5>
+                                <h5 class="modal-title" id="modalDeleteLabel{{ $product->id }}">Delete Data</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -160,7 +169,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary radius-8" data-bs-dismiss="modal">Cancel</button>
-                                <form method="POST" action="{{ route('admin.teams.destroy', $team) }}">
+                                <form method="POST" action="{{ route('admin.products.destroy', $product) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger radius-8">Delete</button>
@@ -174,44 +183,47 @@
     </div>
 </div>
 
-
 <!-- Modal Box Add New -->
 <div class="modal fade" id="modalAddNew" tabindex="-1"
     aria-labelledby="modalAddNewLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content radius-8">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalAddNewLabel">Add New Team</h5>
+                    <h5 class="modal-title" id="modalAddNewLabel">Add New Product</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
 
-            <form method="POST" action="{{ route('admin.teams.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.products.store') }}" enctype="multipart/form-data">
                     @csrf
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Image</label>
-                        <input class="form-control" type="file" id="formFile" required name="img_team">
-                    </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Name..." name="name">
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title..." name="title">
+                        <label for="formFile" class="form-label">Thumbnail 1</label>
+                        <input class="form-control" type="file" id="formFile" required name="thumbnail_1">
                     </div>
                     <div class="mb-3">
-                        <label for="linkedin" class="form-label">Linkedin</label>
-                        <input type="text" class="form-control" id="linkedin" placeholder="Linkedin..." name="linkedin">
+                        <label for="formFile" class="form-label">Thumbnail 2</label>
+                        <input class="form-control" type="file" id="formFile" required name="thumbnail_2">
                     </div>
                     <div class="mb-3">
-                        <label for="instagram" class="form-label">Instagram</label>
-                        <input type="text" class="form-control" id="instagram" placeholder="Instagram..." name="instagram">
+                        <label for="client" class="form-label">Client</label>
+                        <input type="text" class="form-control" id="client" placeholder="Client..." name="client">
                     </div>
                     <div class="mb-3">
-                        <label for="behance" class="form-label">Behance</label>
-                        <input type="text" class="form-control" id="behance" placeholder="Behance..." name="behance">
+                        <label for="project" class="form-label">Project</label>
+                        <input type="text" class="form-control" id="project" placeholder="Project..." name="project">
+                    </div>
+                    <div class="mb-3">
+                        <label for="serviceProduct" class="form-label">Service</label>
+                        <input type="text" class="form-control" id="serviceProduct" placeholder="Service..." name="service">
+                    </div>
+                    <div class="mb-3">
+                        <label for="body" class="form-label">Description</label>
+                        <textarea type="text" class="form-control" id="body" name="body" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -223,5 +235,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection
