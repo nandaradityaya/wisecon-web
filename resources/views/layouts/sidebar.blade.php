@@ -302,7 +302,7 @@
 		});
 
 		document.getElementById('add-our-approaches').addEventListener('click', function() {
-			var container = document.getElementById('our-approachess-container');
+			var container = document.getElementById('our-approaches-container');
 			var input = document.createElement('input');
 			input.type = 'text';
 			input.name = 'our_approaches[]';

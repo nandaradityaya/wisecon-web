@@ -45,6 +45,13 @@ class ServiceController extends Controller
                 $thumbnailPath = 'images/thumbnail-default.png'; 
             }
 
+            if($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('icons', 'public'); 
+                $validated['icon'] = $iconPath; 
+            } else {
+                $iconPath = 'images/icon-default.png'; 
+            }
+
             $validated['slug'] = Str::slug($validated['title']);
         
 
@@ -107,6 +114,13 @@ class ServiceController extends Controller
                 $validated['thumbnail'] = $thumbnailPath; 
             } else {
                 $thumbnailPath = 'images/thumbnail-default.png'; 
+            }
+
+            if($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('icons', 'public'); 
+                $validated['icon'] = $iconPath; 
+            } else {
+                $iconPath = 'images/icon-default.png'; 
             }
 
             $validated['slug'] = Str::slug($validated['title']);

@@ -63,6 +63,7 @@
                         <th>No</th>
                         <th>Title</th>
                         <th>Thumbnail</th>
+                        <th>Icon</th>
                         <th>excerpt</th>
                         <th>Body</th>
                         <th>Key Feature</th>
@@ -78,6 +79,9 @@
                         <td>{{ $service->title }}</td>
                         <td>
                             <img src="{{ Storage::url($service->thumbnail) }}" width="100" alt="">
+                        </td>
+                        <td>
+                            <img src="{{ Storage::url($service->icon) }}" width="100" alt="">
                         </td>
                         <td>{{ $service->excerpt }}</td>
                         <td>{{ $service->body }}</td>
@@ -131,7 +135,12 @@
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Thumbnail</label>
                                         <input class="form-control mb-2" type="file" id="formFile" name="thumbnail">
-                                        <img src="{{ Storage::url($service->thumbnail) }}" width="100" alt="image team wisesa consulting">
+                                        <img src="{{ Storage::url($service->thumbnail) }}" width="100" alt="thumbnail service wisesa consulting">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Icon</label>
+                                        <input class="form-control mb-2" type="file" id="formFile" name="icon">
+                                        <img src="{{ Storage::url($service->icon) }}" width="100" alt="icon service wisesa consulting">
                                     </div>
                                     <div class="mb-3">
                                         <label for="excerpt" class="form-label">Excerpt</label>
@@ -224,6 +233,10 @@
                         <input class="form-control" type="file" id="formFile" name="thumbnail">
                     </div>
                     <div class="mb-3">
+                        <label for="formFile" class="form-label">Icon</label>
+                        <input class="form-control" type="file" id="formFile" name="icon">
+                    </div>
+                    <div class="mb-3">
                         <label for="excerpt" class="form-label">Excerpt</label>
                         <input type="text" class="form-control" id="excerpt" placeholder="Excerpt..." name="excerpt">
                     </div>
@@ -240,7 +253,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Our Approaches</label>
-                        <div id="our-approachess-container">
+                        <div id="our-approaches-container">
                             <input type="text" class="form-control mb-2" placeholder="Write your copywriting" name="our_approaches[]">
                         </div>
                         <button type="button" class="btn btn-primary" id="add-our-approaches">+</button>

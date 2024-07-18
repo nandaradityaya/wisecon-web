@@ -24,6 +24,7 @@ class UpdateServiceRequest extends FormRequest
         return [
             'title' => ['required', 'string'],
             'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,jpeg,svg'],
+            'icon' => ['sometimes', 'image', 'mimes:png,jpg,jpeg,svg'],
             'excerpt' => ['required', 'string'],
             'body' => ['required', 'string'],
             'key_features.*' => ['required', 'string'],

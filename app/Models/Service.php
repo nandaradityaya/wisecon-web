@@ -14,6 +14,7 @@ class Service extends Model
         'title',
         'slug',
         'thumbnail',
+        'icon',
         'excerpt',
         'body',
     ];
