@@ -123,6 +123,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.applications.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.applications.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Application') }}</div>
+                    </a>
+                </li>
+                @endrole
 			</ul>
 			<!--end navigation-->
 		</div>

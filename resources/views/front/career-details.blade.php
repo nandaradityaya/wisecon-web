@@ -3,6 +3,31 @@
 @section('content')
 <section class="blog-wrapper news-wrapper section-padding">
     <div class="container">
+      @if(session('success'))
+            <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2" id="success-alert">
+                <div class="d-flex align-items-center">
+                    <div class="font-35 text-success"><i class="bx bxs-check-circle"></i></div>
+                    <div class="ms-3">
+                        <h6 class="mb-0 text-success">Success</h6>
+                        <div>{{ session('success') }}</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        
+        @if(session('error'))
+        <div class="alert border-0 border-start border-5 border-danger alert-dismissible fade show py-2" id="error-alert">
+            <div class="d-flex align-items-center">
+                <div class="font-35 text-danger"><i class="bx bxs-x-circle"></i></div>
+                <div class="ms-3">
+                    <h6 class="mb-0 text-danger">Error</h6>
+                    <div>{{ session('error') }}</div>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
       <div class="row">
         <div class="col-12 col-lg-8" data-aos="fade-right">
           <div class="blog-post-details border-wrap">
@@ -50,44 +75,41 @@
       
                 <div class="col-12 col-lg-12">
                   <div class="contact-form">
-                    <form action="" class="row conact-form">
+                    <form action="{{ route('front.apply.store') }}" method="POST" enctype="multipart/form-data" class="row conact-form">
+                      @csrf
                       <div class="col-md-6 col-12">
                         <div class="single-personal-info">
                           <label for="fname">Full Name</label>
-                          <input type="text" id="fname" placeholder="Enter Name" />
+                          <input type="text" id="fname" name="name" placeholder="Enter Name" required />
                         </div>
                       </div>
                       <div class="col-md-6 col-12">
                         <div class="single-personal-info">
                           <label for="email">Email Address</label>
-                          <input
-                            type="email"
-                            id="email"
-                            placeholder="Enter Email Address"
-                          />
+                          <input type="email" id="email" name="email" placeholder="Enter Email Address" required />
                         </div>
                       </div>
                       <div class="col-md-6 col-12">
                         <div class="single-personal-info">
                           <label for="phone">Phone Number</label>
-                          <input type="text" id="phone" placeholder="Enter Number" />
+                          <input type="text" id="phone" name="phone_number" placeholder="Enter Number" required />
                         </div>
                       </div>
                       <div class="col-md-6 col-12">
                         <div class="single-personal-info">
-                          <label for="subject">Position</label>
-                          <select class="form-select form-select-wisesa" aria-label="position">
-                            <option selected>Select Position</option>
-                            <option value="1">Developer</option>
-                            <option value="2">UI/UX Designer</option>
-                            <option value="3">Business Analyst</option>
+                          <label for="position">Position</label>
+                          <select class="form-select form-select-wisesa" id="position" name="career_id" aria-label="position" required>
+                            <option selected disabled>Select Position</option>
+                            @foreach($careers as $career)
+                              <option value="{{ $career->id }}">{{ $career->title }}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="col-md-12 col-12">
                         <div class="single-personal-info">
-                          <label for="subject">Resume / CV</label>
-                          <input class="form-control" type="file" id="formFile">
+                          <label for="resume">Resume / CV</label>
+                          <input class="form-control" type="file" id="resume" name="resume" required>
                         </div>
                       </div>
                       <div class="col-md-12 col-12 text-center">

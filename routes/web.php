@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
@@ -19,6 +20,10 @@ Route::get('/service', [FrontController::class, 'service'])->name('front.service
 Route::get('/service/{service:slug}', [FrontController::class, 'servicesDetail'])->name('front.service-details');
 Route::get('/career', [FrontController::class, 'career'])->name('front.career');
 Route::get('/career/{career:slug}', [FrontController::class, 'careerDetails'])->name('front.career-details');
+Route::get('/apply', [FrontController::class, 'showApplicationForm'])->name('front.apply');
+
+Route::post('/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
+// Route::post('/career/{career:slug}/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
 
 Route::get('/admin/homes', function () {
     return view('admin.homes.index');
@@ -39,6 +44,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('contacts', ContactController::class)->middleware('role:owner'); 
         Route::resource('teams', TeamController::class)->middleware('role:owner'); 
         Route::resource('products', ProductController::class)->middleware('role:owner'); 
+        Route::resource('applications', ApplicationController::class)->middleware('role:owner');
     });
 });
 

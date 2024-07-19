@@ -26,4 +26,9 @@ class Career extends Model
     public function requirements() {
         return $this->hasMany(Requirement::class);
     }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
 }

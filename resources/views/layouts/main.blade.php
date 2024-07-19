@@ -218,5 +218,23 @@
     <script src="../assets/js/ajax-mail.js"></script>
     <script src="../assets/js/aos.min.js"></script>
     <script src="../assets/js/active.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          // Close the alert
+          var successAlert = document.getElementById('success-alert');
+          if (successAlert) {
+            var bsAlert = new bootstrap.Alert(successAlert);
+            bsAlert.close();
+          }
+  
+          var errorAlert = document.getElementById('error-alert');
+          if (errorAlert) {
+            var bsAlert = new bootstrap.Alert(errorAlert);
+            bsAlert.close();
+          }
+        }, 5000);
+      });
+    </script>
   </body>
 </html>

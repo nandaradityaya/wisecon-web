@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->unsignedBigInteger('career_id'); 
+            $table->string('resume'); 
+            $table->softDeletes();
             $table->timestamps();
+    
+            $table->foreign('career_id')->references('id')->on('careers')->onDelete('cascade');
         });
     }
 
