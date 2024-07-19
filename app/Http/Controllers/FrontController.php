@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Career;
+use App\Models\HomeSlider;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function index () {
-        return view ('front.index'); 
+        $homes = HomeSlider::orderBy('id')->get();
+        $services = Service::orderBy('id')->get();
+        return view ('front.index', compact(['homes', 'services']));
     }
 
     public function about () {
@@ -21,5 +25,14 @@ class FrontController extends Controller
 
     public function serviceDetails (Service $service) {
         return view ('front.service-details', compact('service')); 
+    }
+
+    public function career () {
+        $careers = Career::orderBy('id')->get();
+        return view ('front.career', compact(['careers'])); 
+    }
+
+    public function careerDetails (Career $career) {
+        return view ('front.career-details', compact('career')); 
     }
 }

@@ -5,131 +5,54 @@
 
   <section class="hero-slide-wrapper wisesa-landing-page">
     <div class="hero-slider-active-2 owl-carousel owl-theme">
-      <div
-        class="single-slide bg-cover"
-        style="background-image: url('assets/img/hero-bg-1.jpg')"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="hero-contents text-center">
-                <a
-                  class="theme-btn-sm"
-                  data-animation="fadeInUp"
-                  data-delay="0"
-                  >We are a creative IT solutions agency</a
-                >
-                <h1 data-animation="fadeInUp" data-delay="0.4s">
-                  Preparing for Your Success with the Best IT Services
-                </h1>
-                <div data-animation="fadeInUp" data-delay="0.6s">
-                  <p>
-                    We deliver exceptional solutions to meet all your needs
-                    with excellence and dedication.
-                  </p>
-                </div>
+      @forelse ($homes as $home)
+        <div
+          class="single-slide bg-cover"
+          style="background-image: url('{{ Storage::url($home->img_slider) }}')"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="hero-contents text-center">
+                  <a
+                    class="theme-btn-sm"
+                    data-animation="fadeInUp"
+                    data-delay="0"
+                    >{{ $home->badge_text }}</a
+                  >
+                  <h1 data-animation="fadeInUp" data-delay="0.4s">
+                    {{ $home->title }}
+                  </h1>
+                  <div data-animation="fadeInUp" data-delay="0.6s">
+                    <p>
+                      {{ $home->sub_title }}
+                    </p>
+                  </div>
 
-                <div
-                  class="btn__wrapper d-flex flex-wrap justify-content-center"
-                  data-animation="fadeInUp"
-                  data-delay="0.8s"
-                >
-                  <a href="#" class="theme-btn"
-                    >Service We Provide <i class="icon-arrow-right-1"></i
-                  ></a>
-                  <a href="#" class="theme-btn"
-                    >learn more <i class="icon-arrow-right-1"></i
-                  ></a>
+                  <div
+                    class="btn__wrapper d-flex flex-wrap justify-content-center"
+                    data-animation="fadeInUp"
+                    data-delay="0.8s"
+                  >
+                    <a href="#" class="theme-btn"
+                      >Service We Provide <i class="icon-arrow-right-1"></i
+                    ></a>
+                    <a href="#" class="theme-btn"
+                      >learn more <i class="icon-arrow-right-1"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      @empty
+        <p>
+            Belum ada data terbaru
+        </p>
+      @endforelse
+      
 
-      <div
-        class="single-slide bg-cover"
-        style="background-image: url('assets/img/hero-bg-2.jpg')"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="hero-contents text-center">
-                <a
-                  class="theme-btn-sm"
-                  data-animation="fadeInUp"
-                  data-delay="0"
-                  >We are an innovative IT service provider</a
-                >
-                <h1 data-animation="fadeInUp" data-delay="0.4s">
-                  Your Success Starts Here with Premier IT Solutions
-                </h1>
-                <div data-animation="fadeInUp" data-delay="0.6s">
-                  <p>
-                    We provide comprehensive solutions with a commitment to
-                    quality and customer satisfaction.
-                  </p>
-                </div>
-
-                <div
-                  class="btn__wrapper d-flex flex-wrap justify-content-center"
-                  data-animation="fadeInUp"
-                  data-delay="0.8s"
-                >
-                  <a href="#" class="theme-btn"
-                    >Service We Provide <i class="icon-arrow-right-1"></i
-                  ></a>
-                  <a href="#" class="theme-btn"
-                    >learn more <i class="icon-arrow-right-1"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="single-slide bg-cover"
-        style="background-image: url('assets/img/hero-bg-3.jpg')"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="hero-contents text-center">
-                <a
-                  class="theme-btn-sm"
-                  data-animation="fadeInUp"
-                  data-delay="0"
-                  >We are your creative IT service partner</a
-                >
-                <h1 data-animation="fadeInUp" data-delay="0.4s">
-                  Achieve Success with Our Leading IT Solutions
-                </h1>
-                <div data-animation="fadeInUp" data-delay="0.6s">
-                  <p>
-                    We offer tailored solutions to address your challenges
-                    with precision and expertise.
-                  </p>
-                </div>
-
-                <div
-                  class="btn__wrapper d-flex flex-wrap justify-content-center"
-                  data-animation="fadeInUp"
-                  data-delay="0.8s"
-                >
-                  <a href="#" class="theme-btn"
-                    >Service We Provide <i class="icon-arrow-right-1"></i
-                  ></a>
-                  <a href="#" class="theme-btn"
-                    >learn more <i class="icon-arrow-right-1"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -327,165 +250,37 @@
         </div>
 
         <div class="row text-center">
-          <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="background-image: url('assets/img/infrastructure.jpg')"
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_server.svg" alt="" />
-                </div>
-                <h3>
-                  <a href="services-details.html">Infrastructure</a>
-                </h3>
-                <p>
-                  Building robust and scalable IT infrastructures to support
-                  your growth
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
-              </div>
-            </div>
-          </div>
 
-          <div
-            class="col-xl-4 col-md-6 col-12"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="
-                  background-image: url('assets/img/web-development.jpg');
-                "
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_code.svg" alt="" />
+          @forelse ($services as $service)
+            <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
+              <div class="single-our-service style-2">
+                <div
+                  class="thumb bg-cover"
+                  style="background-image: url('{{ Storage::url($service->thumbnail) }}')"
+                ></div>
+                <div class="content">
+                  <div class="icon">
+                    <img src="{{ Storage::url($service->icon) }}" alt="" />
+                  </div>
+                  <h3>
+                    <a href="services-details.html">{{ $service->title }}</a>
+                  </h3>
+                  <p>
+                    {{ $service->excerpt }}
+                  </p>
+                  <a href="#" class="read-more text-uppercase"
+                    >read more <i class="icon-arrow-right-1"></i
+                  ></a>
                 </div>
-                <h3><a href="services-details.html">Web Development</a></h3>
-                <p>
-                  Developing high-quality, responsive websites tailored to
-                  your needs.
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
               </div>
             </div>
-          </div>
+          @empty
+            <p>
+              Belum ada data terbaru
+            </p>
+          @endforelse
+          
 
-          <div
-            class="col-xl-4 col-md-6 col-12"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="
-                  background-image: url('assets/img/app-development.jpg');
-                "
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_mobile.svg" alt="" />
-                </div>
-                <h3>
-                  <a href="services-details.html">Mobile App Development</a>
-                </h3>
-                <p>
-                  Creating innovative mobile apps that meet your business
-                  needs.
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-xl-4 col-md-6 col-12"
-            data-aos="fade-up"
-            data-aos-delay="150"
-          >
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="background-image: url('assets/img/uiux-design.jpg')"
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_strategy.svg" alt="" />
-                </div>
-                <h3><a href="services-details.html">UI/UX Strategy</a></h3>
-                <p>
-                  Designing intuitive and engaging user experiences for your
-                  products.
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-xl-4 col-md-6 col-12"
-            data-aos="fade-up"
-            data-aos-delay="150"
-          >
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="background-image: url('assets/img/support.jpg')"
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_clock.svg" alt="" />
-                </div>
-                <h3><a href="services-details.html">Excellent Support</a></h3>
-                <p>
-                  Providing top-notch support to ensure your IT operations run
-                  smoothly.
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-xl-4 col-md-6 col-12"
-            data-aos="fade-up"
-            data-aos-delay="150"
-          >
-            <div class="single-our-service style-2">
-              <div
-                class="thumb bg-cover"
-                style="background-image: url('assets/img/cyber-security.jpg')"
-              ></div>
-              <div class="content">
-                <div class="icon">
-                  <img src="assets/img/icon/ic_security.svg" alt="" />
-                </div>
-                <h3><a href="services-details.html">Data Security</a></h3>
-                <p>
-                  Ensuring the safety and confidentiality of your critical
-                  business data.
-                </p>
-                <a href="#" class="read-more text-uppercase"
-                  >read more <i class="icon-arrow-right-1"></i
-                ></a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

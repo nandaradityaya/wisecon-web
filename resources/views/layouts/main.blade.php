@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="rrdevs" />
     <title>Wisesa Consulting</title>
-    <link rel="shortcut icon" href="assets/img/ico-wisesa.svg" />
-    <link rel="stylesheet" href="assets/css/icons.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/css/metismenu.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/aos.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="../assets/img/ico-wisesa.svg" />
+    <link rel="stylesheet" href="../assets/css/icons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/metismenu.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/aos.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
   <body class="body-wrapper">
@@ -37,7 +37,7 @@
               <div class="logo">
                 <a href="index.html">
                   <img
-                    src="assets/img/logo-wisesa.svg"
+                    src="../assets/img/logo-wisesa.svg"
                     alt="logo"
                     width="158"
                   />
@@ -46,7 +46,7 @@
               <div class="logo-2">
                 <a href="index.html">
                   <img
-                    src="assets/img/logo-wisesa.svg"
+                    src="../assets/img/logo-wisesa.svg"
                     alt="logo"
                     width="158"
                   />
@@ -62,7 +62,7 @@
                   <li><a href="products.html">Products</a></li>
 
                   <li><a href="clients.html">Clients</a></li>
-                  <li><a href="career.html">Career</a></li>
+                  <li><a href="{{ route('front.career') }}">Career</a></li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
               </div>
@@ -129,7 +129,7 @@
                 <div class="footer-logo">
                   <a href="index.html">
                     <img
-                      src="assets/img/logo-wisesa.svg"
+                      src="../assets/img/logo-wisesa.svg"
                       alt="logo wisesa consulting"
                     />
                   </a>
@@ -137,7 +137,7 @@
                 <div class="footer-logo-2">
                   <a href="index.html">
                     <img
-                      src="assets/img/logo-wisesa.svg"
+                      src="../assets/img/logo-wisesa.svg"
                       alt="logo wisesa consulting"
                     />
                   </a>
@@ -199,24 +199,24 @@
 
     <!--  ALl JS Plugins
     ====================================== -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/modernizr.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imageload.min.js"></script>
-    <script src="assets/js/scrollUp.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/easypiechart.min.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/metismenu.js"></script>
-    <script src="assets/js/timeline.min.js"></script>
-    <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/ajax-mail.js"></script>
-    <script src="assets/js/aos.min.js"></script>
-    <script src="assets/js/active.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/modernizr.min.js"></script>
+    <script src="../assets/js/jquery.easing.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/imageload.min.js"></script>
+    <script src="../assets/js/scrollUp.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/magnific-popup.min.js"></script>
+    <script src="../assets/js/easypiechart.min.js"></script>
+    <script src="../assets/js/counterup.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/metismenu.js"></script>
+    <script src="../assets/js/timeline.min.js"></script>
+    <script src="../assets/js/nice-select.min.js"></script>
+    <script src="../assets/js/ajax-mail.js"></script>
+    <script src="../assets/js/aos.min.js"></script>
+    <script src="../assets/js/active.js"></script>
   </body>
 </html>
