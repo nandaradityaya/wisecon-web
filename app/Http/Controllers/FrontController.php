@@ -34,7 +34,8 @@ class FrontController extends Controller
         $faqs = FrequentlyAskedQuestion::orderBy('id')->get();
         $teams = Team::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.about', compact('abouts', 'faqs', 'teams', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.about', compact('abouts', 'faqs', 'teams', 'companyProfiles', 'services')); 
     }
 
     public function service () {
@@ -52,37 +53,43 @@ class FrontController extends Controller
     public function career () {
         $careers = Career::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.career', compact(['careers', 'companyProfiles'])); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.career', compact(['careers', 'companyProfiles', 'services'])); 
     }
 
     public function careerDetails (Career $career) {
         $careers = Career::all();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.career-details', compact('career', 'careers', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.career-details', compact('career', 'careers', 'companyProfiles', 'services')); 
     }
 
     public function product () {
         $products = Product::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.product', compact('products', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.product', compact('products', 'companyProfiles', 'services')); 
     }
 
     public function productDetails (Product $product) {
         $products = Product::all();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.product-details', compact('product', 'products', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.product-details', compact('product', 'products', 'companyProfiles', 'services')); 
     }
 
     public function client () {
         $clients = Client::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.client', compact('clients', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.client', compact('clients', 'companyProfiles', 'services')); 
     }
 
     public function contact () {
         $contacts = Contact::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.contact', compact('contacts', 'companyProfiles')); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.contact', compact('contacts', 'companyProfiles', 'services')); 
     }
 
     public function storeMessage(Request $request)

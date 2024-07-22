@@ -171,14 +171,16 @@
                 <div class="wid-title">
                   <h4>Services</h4>
                 </div>
-                <ul>
-                  <li><a href="#">Infrastructure</a></li>
-                  <li><a href="#">Web Development</a></li>
-                  <li><a href="#">Mobile App Development</a></li>
-                  <li><a href="#">UI/UX Strategy</a></li>
-                  <li><a href="#">Excellent Support</a></li>
-                  <li><a href="#">Data Security</a></li>
-                </ul>
+                @if($services->isNotEmpty())
+                @foreach($services as $service)
+                  <ul>
+                    <li><a href="#">{{ $service->title }}</a></li>
+                  </ul>
+                @endforeach
+                @else
+                  <p>No Data Yet</p>
+                @endif
+                
               </div>
             </div>
 

@@ -34,11 +34,8 @@
                     data-animation="fadeInUp"
                     data-delay="0.8s"
                   >
-                    <a href="#" class="theme-btn"
-                      >Service We Provide <i class="icon-arrow-right-1"></i
-                    ></a>
-                    <a href="#" class="theme-btn"
-                      >learn more <i class="icon-arrow-right-1"></i
+                    <a href="{{ route('front.service') }}" class="theme-btn"
+                      >Learn More <i class="icon-arrow-right-1"></i
                     ></a>
                   </div>
                 </div>
