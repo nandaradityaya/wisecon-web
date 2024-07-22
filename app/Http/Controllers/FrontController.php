@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Application;
 use App\Models\Career;
+use App\Models\Client;
 use App\Models\FrequentlyAskedQuestion;
 use App\Models\HomeSlider;
 use App\Models\Product;
@@ -55,6 +56,11 @@ class FrontController extends Controller
     public function productDetails (Product $product) {
         $products = Product::all();
         return view ('front.product-details', compact('product', 'products')); 
+    }
+
+    public function client () {
+        $clients = Client::orderBy('id')->get();
+        return view ('front.client', compact('clients')); 
     }
 
     public function storeApplication(Request $request)

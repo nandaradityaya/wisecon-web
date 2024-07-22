@@ -61,9 +61,9 @@
                   <li class="{{ request()->routeIs('front.service') ? 'active' : '' }}"><a href="{{ route('front.service') }}">Services</a></li>
                   <li class="{{ request()->routeIs('front.product') ? 'active' : '' }}"><a href="{{ route('front.product') }}">Products</a></li>
 
-                  <li><a href="clients.html">Clients</a></li>
+                  <li class="{{ request()->routeIs('front.client') ? 'active' : '' }}"><a href="{{ route('front.client') }}">Clients</a></li>
                   <li class="{{ request()->routeIs('front.career') ? 'active' : '' }}"><a href="{{ route('front.career') }}">Career</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li class="{{ request()->routeIs('front.contact') ? 'active' : '' }}"><a href="{{ route('front.contact') }}">Contact</a></li>
                 </ul>
               </div>
             </div>
@@ -90,9 +90,9 @@
                         <li><a href="{{ route('front.service') }}">Services</a></li>
                         <li><a href="{{ route('front.product') }}">Products</a></li>
 
-                        <li><a href="clients.html">Clients</a></li>
-                        <li><a href="{{ route('front.product') }}">Career</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('front.client') }}">Clients</a></li>
+                        <li><a href="{{ route('front.career') }}">Career</a></li>
+                        <li><a href="{{ route('front.contact') }}">Contact</a></li>
                       </ul>
                     </nav>
 
