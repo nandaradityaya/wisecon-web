@@ -6,8 +6,10 @@ use App\Models\About;
 use App\Models\Application;
 use App\Models\Career;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\FrequentlyAskedQuestion;
 use App\Models\HomeSlider;
+use App\Models\Message;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Team;
@@ -61,6 +63,33 @@ class FrontController extends Controller
     public function client () {
         $clients = Client::orderBy('id')->get();
         return view ('front.client', compact('clients')); 
+    }
+
+    public function contact () {
+        $contacts = Contact::orderBy('id')->get();
+        return view ('front.contact', compact('contacts')); 
+    }
+
+    public function storeMessage(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone_number' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+
+        // Save application to the database
+        Message::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'Your message has been successfully sent!');
     }
 
     public function storeApplication(Request $request)

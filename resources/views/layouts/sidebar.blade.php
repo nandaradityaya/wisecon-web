@@ -131,6 +131,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.messages.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.messages.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Message') }}</div>
+                    </a>
+                </li>
+                @endrole
 			</ul>
 			<!--end navigation-->
 		</div>
@@ -265,7 +273,7 @@
 	
 	<script>
 		$(document).ready(function () {
-			var table = $('#serviceTable').DataTable({
+			var table = $('#dataTable').DataTable({
 			});
 		});
 		

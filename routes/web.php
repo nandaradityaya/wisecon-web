@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrequentlyAskedQuestionController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -27,6 +28,7 @@ Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact
 Route::get('/apply', [FrontController::class, 'showApplicationForm'])->name('front.apply');
 
 Route::post('/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
+Route::post('/contact', [FrontController::class, 'storeMessage'])->name('front.message.store');
 // Route::post('/career/{career:slug}/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
 
 Route::get('/admin/homes', function () {
@@ -49,6 +51,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('teams', TeamController::class)->middleware('role:owner'); 
         Route::resource('products', ProductController::class)->middleware('role:owner'); 
         Route::resource('applications', ApplicationController::class)->middleware('role:owner');
+        Route::resource('messages', MessageController::class)->middleware('role:owner');
     });
 });
 
