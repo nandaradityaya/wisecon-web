@@ -59,10 +59,10 @@
                   <li class="{{ request()->routeIs('front.index') ? 'active' : '' }}"><a href="{{ route('front.index') }}">Home</a></li>
                   <li class="{{ request()->routeIs('front.about') ? 'active' : '' }}"><a href="{{ route('front.about') }}">About Us</a></li>
                   <li class="{{ request()->routeIs('front.service') ? 'active' : '' }}"><a href="{{ route('front.service') }}">Services</a></li>
-                  <li><a href="products.html">Products</a></li>
+                  <li class="{{ request()->routeIs('front.product') ? 'active' : '' }}"><a href="{{ route('front.product') }}">Products</a></li>
 
                   <li><a href="clients.html">Clients</a></li>
-                  <li><a href="{{ route('front.career') }}">Career</a></li>
+                  <li class="{{ request()->routeIs('front.career') ? 'active' : '' }}"><a href="{{ route('front.career') }}">Career</a></li>
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
               </div>
@@ -88,10 +88,10 @@
                         <li><a href="{{ route('front.index') }}">Home</a></li>
                         <li><a href="{{ route('front.about') }}">About Us</a></li>
                         <li><a href="{{ route('front.service') }}">Services</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="{{ route('front.product') }}">Products</a></li>
 
                         <li><a href="clients.html">Clients</a></li>
-                        <li><a href="career.html">Career</a></li>
+                        <li><a href="{{ route('front.product') }}">Career</a></li>
                         <li><a href="contact.html">Contact</a></li>
                       </ul>
                     </nav>

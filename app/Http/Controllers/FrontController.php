@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Career;
 use App\Models\FrequentlyAskedQuestion;
 use App\Models\HomeSlider;
+use App\Models\Product;
 use App\Models\Service;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -44,6 +45,16 @@ class FrontController extends Controller
     public function careerDetails (Career $career) {
         $careers = Career::all();
         return view ('front.career-details', compact('career', 'careers')); 
+    }
+
+    public function product () {
+        $products = Product::orderBy('id')->get();
+        return view ('front.product', compact('products')); 
+    }
+
+    public function productDetails (Product $product) {
+        $products = Product::all();
+        return view ('front.product-details', compact('product', 'products')); 
     }
 
     public function storeApplication(Request $request)

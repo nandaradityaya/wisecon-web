@@ -20,6 +20,8 @@ Route::get('/service', [FrontController::class, 'service'])->name('front.service
 Route::get('/service/{service:slug}', [FrontController::class, 'serviceDetails'])->name('front.service-details');
 Route::get('/career', [FrontController::class, 'career'])->name('front.career');
 Route::get('/career/{career:slug}', [FrontController::class, 'careerDetails'])->name('front.career-details');
+Route::get('/product', [FrontController::class, 'product'])->name('front.product');
+Route::get('/product/{product:slug}', [FrontController::class, 'productDetails'])->name('front.product-details');
 Route::get('/apply', [FrontController::class, 'showApplicationForm'])->name('front.apply');
 
 Route::post('/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
