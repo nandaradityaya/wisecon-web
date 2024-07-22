@@ -44,6 +44,11 @@ class TeamController extends Controller
                 $imgTeamPath = 'images/img_team-default.png'; 
             }
 
+            // Set default value to null if fields are not present
+            $validated['instagram'] = $validated['instagram'] ?? null;
+            $validated['linkedin'] = $validated['linkedin'] ?? null;
+            $validated['behance'] = $validated['behance'] ?? null;
+
         
 
             Team::create($validated); 
@@ -85,7 +90,10 @@ class TeamController extends Controller
                 $imgTeamPath = 'images/img_team-default.png'; 
             }
 
-        
+            // Set default value to null if fields are not present
+            $validated['instagram'] = $validated['instagram'] ?? null;
+            $validated['linkedin'] = $validated['linkedin'] ?? null;
+            $validated['behance'] = $validated['behance'] ?? null;
 
             $team->update($validated); 
         });
