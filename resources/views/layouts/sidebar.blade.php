@@ -147,6 +147,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.testimonials.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.testimonials.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Testimonial') }}</div>
+                    </a>
+                </li>
+                @endrole
 			</ul>
 			<!--end navigation-->
 		</div>

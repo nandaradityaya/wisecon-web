@@ -347,53 +347,26 @@
             </div>
 
             <div class="testimonial-carousel-3 owl-carousel owl-theme">
-              <div class="single-testimonial active">
-                <div class="icon">
-                  <i class="flaticon-right-quote"></i>
-                </div>
-                <h2>
-                  Wisecon has transformed our IT infrastructure. Their
-                  expertise and commitment to excellence are unmatched. We
-                  couldn't be happier with the results!
-                </h2>
-                <div class="client-info">
-                  <div class="client-bio">
-                    <p><a href="#">Bambang,</a> Makna Corp</p>
+              @forelse ($testimonials as $testimonial)
+                <div class="single-testimonial">
+                  <div class="icon">
+                    <i class="flaticon-right-quote"></i>
+                  </div>
+                  <h2>
+                    {{ $testimonial->testimonial }}
+                  </h2>
+                  <div class="client-info">
+                    <div class="client-bio">
+                      <p><a href="#">{{ $testimonial->name }},</a> {{ $testimonial->company }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="single-testimonial">
-                <div class="icon">
-                  <i class="flaticon-right-quote"></i>
-                </div>
-                <h2>
-                  The team at WiseCon provided exceptional support and
-                  guidance throughout our project. Their solutions have
-                  significantly improved our business operations.
-                </h2>
-                <div class="client-info">
-                  <div class="client-bio">
-                    <p><a href="#">Haris Nugraha,</a> Astra Otoparts</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-testimonial">
-                <div class="icon">
-                  <i class="flaticon-right-quote"></i>
-                </div>
-                <h2>
-                  Our experience with WiseCon has been outstanding. They
-                  delivered a high-quality product on time and within budget.
-                  Highly recommend their services!
-                </h2>
-                <div class="client-info">
-                  <div class="client-bio">
-                    <p><a href="#">Bella Swan,</a> Future Tech</p>
-                  </div>
-                </div>
-              </div>
+              @empty
+                <p>
+                  No Data Yet
+                </p>
+              @endforelse
+              
             </div>
           </div>
 

@@ -14,6 +14,7 @@ use App\Models\Message;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -24,7 +25,8 @@ class FrontController extends Controller
         $products = Product::orderBy('id')->get();
         $clients = Client::orderBy('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.index', compact(['homes', 'services', 'products', 'clients', 'companyProfiles']));
+        $testimonials = Testimonial::orderByDesc('id')->get();
+        return view ('front.index', compact(['homes', 'services', 'products', 'clients', 'companyProfiles', 'testimonials']));
     }
 
     public function about () {

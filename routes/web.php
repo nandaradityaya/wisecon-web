@@ -14,6 +14,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
@@ -54,6 +55,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('applications', ApplicationController::class)->middleware('role:owner');
         Route::resource('messages', MessageController::class)->middleware('role:owner');
         Route::resource('companyProfiles', CompanyProfileController::class)->middleware('role:owner');
+        Route::resource('testimonials', TestimonialController::class)->middleware('role:owner');
     });
 });
 

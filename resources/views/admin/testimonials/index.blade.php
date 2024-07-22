@@ -3,13 +3,13 @@
 @section('admin')
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-    <div class="breadcrumb-title pe-3">Contact</div>
+    <div class="breadcrumb-title pe-3">Testimonial</div>
     <div class="ps-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                <li class="breadcrumb-item active" aria-current="page">Testimonial</li>
             </ol>
         </nav>
     </div>
@@ -20,7 +20,7 @@
     <div class="card-body">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
-                <h5 class="font-weight-bold mb-0">Contact</h5>
+                <h5 class="font-weight-bold mb-0">Testimonial</h5>
             </div>
             <div class="mt-2">
                 <button type="button" class="btn btn-primary radius-8 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modalAddNew"><i class="bx bx-plus"></i>Add New</button>
@@ -56,29 +56,27 @@
         <div class="table-responsive">
             <div id="printbar" style="float:right"></div>
             <br>
-            <table id="service" class="table mb-0 align-middle" style="width:100%">
+            <table id="dataTable" class="table mb-0 align-middle" style="width:100%">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
-                        <th>Link Map</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Testimonial</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($contacts as $contact)
+                    @foreach ($testimonials as $testimonial)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $contact->link_map }}</td>
-                        <td>{{ $contact->address }}</td>
-                        <td>{{ $contact->email }}</td>
-                        <td>{{ $contact->phone_number }}</td>
+                        <td>{{ $testimonial->name }}</td>
+                        <td>{{ $testimonial->company }}</td>
+                        <td>{{ $testimonial->testimonial }}</td>
                         <td>
                             <div class="d-flex order-actions">
-                                <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $contact->id }}"><i class="bx bxs-edit"></i></a>
-                                <a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $contact->id }}"><i class="bx bxs-trash"></i></a>
+                                <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $testimonial->id }}"><i class="bx bxs-edit"></i></a>
+                                <a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $testimonial->id }}"><i class="bx bxs-trash"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -86,34 +84,30 @@
                 </tbody>
             </table>
 
-            @foreach ($contacts as $contact)
+            @foreach ($testimonials as $testimonial)
             <!-- Modal Box Edit -->
-            <div class="modal fade" id="modalEdit{{ $contact->id }}" tabindex="-1" aria-labelledby="modalEditLabel{{ $contact->id }}" aria-hidden="true">
+            <div class="modal fade" id="modalEdit{{ $testimonial->id }}" tabindex="-1" aria-labelledby="modalEditLabel{{ $testimonial->id }}" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content radius-8">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalEditLabel{{ $contact->id }}">Edit Contact</h5>
+                            <h5 class="modal-title" id="modalEditLabel{{ $testimonial->id }}">Edit testimonial</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form method="POST" action="{{ route('admin.contacts.update', $contact->id) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.testimonials.update', $testimonial->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="linkMap" class="form-label">Link Map</label>
-                                    <input type="text" class="form-control" id="linkMap" value="{{ $contact->link_map }}" name="link_map">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" value="{{ $testimonial->name }}" name="name">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="address" class="form-label">Address</label>
-                                    <textarea type="text" class="form-control" id="address" name="address" rows="3">{{ $contact->address }}</textarea>
+                                    <label for="company" class="form-label">Company</label>
+                                    <input type="text" class="form-control" id="company" value="{{ $testimonial->company }}" name="company">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" value="{{ $contact->email }}" name="email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                                    <input type="text" class="form-control" id="phoneNumber" value="{{ $contact->phone_number }}" name="phone_number">
+                                    <label for="testimonial" class="form-label">Testimonial</label>
+                                    <textarea type="text" class="form-control" id="testimonial" name="testimonial" rows="3">{{ $testimonial->testimonial }}</textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -126,19 +120,19 @@
             </div>
 
             <!-- Modal Box Delete -->
-            <div class="modal fade" id="modalDelete{{ $contact->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $contact->id }}" aria-hidden="true">
+            <div class="modal fade" id="modalDelete{{ $testimonial->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $testimonial->id }}" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalDeleteLabel{{ $contact->id }}">Delete Data</h5>
+                            <h5 class="modal-title" id="modalDeleteLabel{{ $testimonial->id }}">Delete Data</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Are you sure you want to delete this data?
+                            Are you sure you want to delete this Testimonial?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary radius-8" data-bs-dismiss="modal">Cancel</button>
-                            <form method="POST" action="{{ route('admin.contacts.destroy', $contact->id) }}">
+                            <form method="POST" action="{{ route('admin.testimonials.destroy', $testimonial->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger radius-8">Delete</button>
@@ -159,28 +153,24 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content radius-8">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalAddNewLabel">Add New Data</h5>
+                <h5 class="modal-title" id="modalAddNewLabel">Add New Testimonial</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
-            <form method="POST" action="{{ route('admin.contacts.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.testimonials.store') }}" enctype="multipart/form-data">
                 @csrf
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="linkMap" class="form-label">Link Map</label>
-                    <input type="text" class="form-control" id="linkMap" placeholder="Link Map..." name="link_map">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name..." name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <textarea type="text" class="form-control" id="address" placeholder="Address..." name="address" rows="3"></textarea>
+                    <label for="company" class="form-label">Company</label>
+                    <input type="text" class="form-control" id="company" placeholder="Company..." name="company">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email..." name="email">
-                </div>
-                <div class="mb-3">
-                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number..." name="phone_number">
+                    <label for="testimonial" class="form-label">Testimonial</label>
+                    <textarea type="text" class="form-control" id="testimonial" placeholder="Testimonial..." name="testimonial" rows="3"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
