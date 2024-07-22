@@ -139,6 +139,14 @@
                     </a>
                 </li>
                 @endrole
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.companyProfiles.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.companyProfiles.index') }}">
+                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="menu-title">{{ __('Company Profile') }}</div>
+                    </a>
+                </li>
+                @endrole
 			</ul>
 			<!--end navigation-->
 		</div>

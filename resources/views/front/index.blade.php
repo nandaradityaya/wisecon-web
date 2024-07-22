@@ -304,138 +304,32 @@
       </div>
 
       <div class="success-item__wrapper owl-carousel owl-theme">
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/dummy.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>DCT Website</h3>
-              <p>Website</p>
-            </div>
+        @forelse ($products as $product)
+          <a href="{{ route('front.product-details', $product->slug) }}" class="success-item">
+            <div
+              class="thumb bg-cover"
+              style="background-image: url('{{ Storage::url($service->thumbnail) }}')"
+            ></div>
+            <div
+              class="content d-flex align-items-center justify-content-between"
+            >
+              <div class="text">
+                <h3>{{ $product->name }}</h3>
+                <p>{{ $product->service }}</p>
+              </div>
 
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
+              <div class="icon">
+                <i class="icon-arrow-right-1"></i>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        @empty
+          <p>
+            No Data Yet
+          </p>
+        @endforelse
+        
 
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>Lorem Ipsum</h3>
-              <p>Cloud Services</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>Virtual Background</h3>
-              <p>UI/UX Design</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>Data Managment</h3>
-              <p>IT Security</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>E-HR</h3>
-              <p>Mobile Apps</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>Product Engineering</h3>
-              <p>Infrastructure</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="success-item">
-          <div
-            class="thumb bg-cover"
-            style="background-image: url('assets/img/success-product.jpg')"
-          ></div>
-          <div
-            class="content d-flex align-items-center justify-content-between"
-          >
-            <div class="text">
-              <h3>Accounting System</h3>
-              <p>Website</p>
-            </div>
-
-            <div class="icon">
-              <i class="icon-arrow-right-1"></i>
-            </div>
-          </div>
-        </a>
       </div>
     </section>
 
@@ -518,25 +412,16 @@
       <div
         class="brand-carousel-active d-flex justify-content-between owl-carousel"
       >
-        <div class="single-client">
-          <img src="assets/img/client/adv.jpg" alt="" />
-        </div>
-        <div class="single-client">
-          <img src="assets/img/client/honda-lock.jpg" alt="" />
-        </div>
-        <div class="single-client">
-          <img src="assets/img/client/lotte-mart.jpg" alt="" />
-        </div>
-        <div class="single-client">
-          <img src="assets/img/client/lotte-shopping-avenue.png" alt="" />
-        </div>
-        <div class="single-client">
-          <img src="assets/img/client/muhammadiyah.jpg" alt="" />
-        </div>
-        <div class="single-client">
-          <img src="assets/img/client/vdci.jpg" alt="" />
-        </div>
-      </div>
+        @forelse ($clients as $client)
+          <div class="single-client">
+            <img src="{{ Storage::url($client->client_img) }}" alt="" />
+          </div>
+        @empty
+          <p>
+            No Data Yet
+          </p>
+        @endforelse
+        
     </div>
   </div>
 

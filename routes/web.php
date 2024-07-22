@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrequentlyAskedQuestionController;
 use App\Http\Controllers\FrontController;
@@ -52,6 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('products', ProductController::class)->middleware('role:owner'); 
         Route::resource('applications', ApplicationController::class)->middleware('role:owner');
         Route::resource('messages', MessageController::class)->middleware('role:owner');
+        Route::resource('companyProfiles', CompanyProfileController::class)->middleware('role:owner');
     });
 });
 

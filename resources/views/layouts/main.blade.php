@@ -68,11 +68,22 @@
               </div>
             </div>
             <div class="header-right d-flex align-items-center">
-              <div class="header-btn-cta">
-                <a href="contact.html" class="theme-btn"
-                  >Company Profile <i class="fas fa-file-pdf"></i
-                ></a>
-              </div>
+              @if($companyProfiles->isNotEmpty())
+                  @foreach($companyProfiles as $companyProfile)
+                      <div class="header-btn-cta">
+                          <a href="{{ Storage::url($companyProfile->compro) }}" class="theme-btn" download>
+                              Company Profile <i class="fas fa-file-pdf"></i>
+                          </a>
+                      </div>
+                  @endforeach
+              @else
+                <div class="header-btn-cta">
+                    <a href="#" class="theme-btn">
+                        Company Profile <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+              @endif
+              
               <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
                 <div class="mobile-nav-wrap">
                   <div id="hamburger">
