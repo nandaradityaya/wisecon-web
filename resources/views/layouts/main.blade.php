@@ -56,9 +56,9 @@
             <div class="header-menu d-none d-xl-block">
               <div class="main-menu">
                 <ul>
-                  <li class="active"><a href="{{ route('front.index') }}">Home</a></li>
-                  <li><a href="{{ route('front.about') }}">About Us</a></li>
-                  <li><a href="{{ route('front.service') }}">Services</a></li>
+                  <li class="{{ request()->routeIs('front.index') ? 'active' : '' }}"><a href="{{ route('front.index') }}">Home</a></li>
+                  <li class="{{ request()->routeIs('front.about') ? 'active' : '' }}"><a href="{{ route('front.about') }}">About Us</a></li>
+                  <li class="{{ request()->routeIs('front.service') ? 'active' : '' }}"><a href="{{ route('front.service') }}">Services</a></li>
                   <li><a href="products.html">Products</a></li>
 
                   <li><a href="clients.html">Clients</a></li>

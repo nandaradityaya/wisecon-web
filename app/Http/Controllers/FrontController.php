@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Application;
 use App\Models\Career;
+use App\Models\FrequentlyAskedQuestion;
 use App\Models\HomeSlider;
 use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -17,15 +20,20 @@ class FrontController extends Controller
     }
 
     public function about () {
-        return view ('front.about'); 
+        $abouts = About::orderBy('id')->get();
+        $faqs = FrequentlyAskedQuestion::orderBy('id')->get();
+        $teams = Team::orderBy('id')->get();
+        return view ('front.about', compact('abouts', 'faqs', 'teams')); 
     }
 
     public function service () {
-        return view ('front.service'); 
+        $services = Service::orderBy('id')->get();
+        return view ('front.service', compact('services')); 
     }
 
     public function serviceDetails (Service $service) {
-        return view ('front.service-details', compact('service')); 
+        $services = Service::all();
+        return view ('front.service-details', compact('service','services')); 
     }
 
     public function career () {
@@ -37,34 +45,6 @@ class FrontController extends Controller
         $careers = Career::all();
         return view ('front.career-details', compact('career', 'careers')); 
     }
-
-    // public function showApplicationForm()
-    // {
-    //     $careers = Career::all();
-    //     return view('front.career-details', compact('careers'));
-    // }
-
-    // public function storeApplication(Request $request, Career $career)
-    // {
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|email|max:255',
-    //         'phone_number' => 'required|string|max:20',
-    //         'resume' => 'required|file|mimes:pdf,doc,docx|max:2048',
-    //     ]);
-
-    //     $resumePath = $request->file('resume')->store('resumes');
-
-    //     Application::create([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'phone_number' => $request->phone_number,
-    //         'career_id' => $career->id,
-    //         'resume' => $resumePath,
-    //     ]);
-
-    //     return redirect()->route('front.career-details', ['career' => $career->slug])->with('success', 'Application submitted successfully.');
-    // }
 
     public function storeApplication(Request $request)
     {

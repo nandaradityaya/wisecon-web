@@ -3,7 +3,7 @@
 @section('content')
 <section class="blog-wrapper news-wrapper section-padding">
     <div class="container">
-      @if(session('success'))
+        @if(session('success'))
             <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2" id="success-alert">
                 <div class="d-flex align-items-center">
                     <div class="font-35 text-success"><i class="bx bxs-check-circle"></i></div>

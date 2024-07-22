@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/about', [FrontController::class, 'about'])->name('front.about');
 Route::get('/service', [FrontController::class, 'service'])->name('front.service');
-Route::get('/service/{service:slug}', [FrontController::class, 'servicesDetail'])->name('front.service-details');
+Route::get('/service/{service:slug}', [FrontController::class, 'serviceDetails'])->name('front.service-details');
 Route::get('/career', [FrontController::class, 'career'])->name('front.career');
 Route::get('/career/{career:slug}', [FrontController::class, 'careerDetails'])->name('front.career-details');
 Route::get('/apply', [FrontController::class, 'showApplicationForm'])->name('front.apply');
