@@ -53,7 +53,7 @@
 				@role('owner')
 				<li class="{{ request()->routeIs('admin.homes.index') ? 'mm-active' : '' }}">
 					<a href="{{ route('admin.homes.index') }}">
-						<div class="parent-icon"><i class='bx bx-home'></i>
+						<div class="parent-icon"><i class='lni lni-home'></i>
 						</div>
 						<div class="menu-title">{{ __('Home') }}</div>
 					</a>
@@ -62,7 +62,7 @@
                 @role('owner')
                 <li class="{{ request()->routeIs('admin.abouts.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.abouts.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-world'></i></div>
                         <div class="menu-title">{{ __('About') }}</div>
                     </a>
                 </li>
@@ -70,79 +70,83 @@
 				@role('owner')
                 <li class="{{ request()->routeIs('admin.services.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.services.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-rss-feed'></i></div>
                         <div class="menu-title">{{ __('Service') }}</div>
-                    </a>
-                </li>
-                @endrole
-				@role('owner')
-                <li class="{{ request()->routeIs('admin.faqs.index') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.faqs.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
-                        <div class="menu-title">{{ __("FAQ's") }}</div>
-                    </a>
-                </li>
-                @endrole
-				@role('owner')
-                <li class="{{ request()->routeIs('admin.clients.index') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.clients.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
-                        <div class="menu-title">{{ __('Clients') }}</div>
-                    </a>
-                </li>
-                @endrole
-				@role('owner')
-                <li class="{{ request()->routeIs('admin.contacts.index') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.contacts.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
-                        <div class="menu-title">{{ __('Contacts') }}</div>
-                    </a>
-                </li>
-                @endrole
-				@role('owner')
-                <li class="{{ request()->routeIs('admin.teams.index') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.teams.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
-                        <div class="menu-title">{{ __('Team') }}</div>
                     </a>
                 </li>
                 @endrole
 				@role('owner')
                 <li class="{{ request()->routeIs('admin.products.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.products.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-laptop-phone'></i></div>
                         <div class="menu-title">{{ __('Product') }}</div>
+                    </a>
+                </li>
+                @endrole
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.clients.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.clients.index') }}">
+                        <div class="parent-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></div>
+                        <div class="menu-title">{{ __('Clients') }}</div>
                     </a>
                 </li>
                 @endrole
 				@role('owner')
                 <li class="{{ request()->routeIs('admin.careers.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.careers.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-user'></i></div>
                         <div class="menu-title">{{ __('Career') }}</div>
                     </a>
                 </li>
                 @endrole
 				@role('owner')
-                <li class="{{ request()->routeIs('admin.applications.index') ? 'mm-active' : '' }}">
-                    <a href="{{ route('admin.applications.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
-                        <div class="menu-title">{{ __('Application') }}</div>
+                <li class="{{ request()->routeIs('admin.contacts.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.contacts.index') }}">
+                        <div class="parent-icon"><i class='lni lni-phone'></i></div>
+                        <div class="menu-title">{{ __('Contacts') }}</div>
                     </a>
                 </li>
                 @endrole
 				@role('owner')
                 <li class="{{ request()->routeIs('admin.messages.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.messages.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-envelope'></i></div>
                         <div class="menu-title">{{ __('Message') }}</div>
                     </a>
                 </li>
                 @endrole
 				@role('owner')
+                <li class="{{ request()->routeIs('admin.faqs.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.faqs.index') }}">
+                        <div class="parent-icon"><i class='bx bx-help-circle'></i></div>
+                        <div class="menu-title">{{ __("FAQ's") }}</div>
+                    </a>
+                </li>
+                @endrole
+				
+				
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.teams.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.teams.index') }}">
+                        <div class="parent-icon"><i class='lni lni-users'></i></div>
+                        <div class="menu-title">{{ __('Team') }}</div>
+                    </a>
+                </li>
+                @endrole
+				
+				@role('owner')
+                <li class="{{ request()->routeIs('admin.applications.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.applications.index') }}">
+                        <div class="parent-icon"><i class='bx bx-user-plus'></i></div>
+                        <div class="menu-title">{{ __('Application') }}</div>
+                    </a>
+                </li>
+                @endrole
+				
+				@role('owner')
                 <li class="{{ request()->routeIs('admin.companyProfiles.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.companyProfiles.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-write'></i></div>
                         <div class="menu-title">{{ __('Company Profile') }}</div>
                     </a>
                 </li>
@@ -150,7 +154,7 @@
 				@role('owner')
                 <li class="{{ request()->routeIs('admin.testimonials.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('admin.testimonials.index') }}">
-                        <div class="parent-icon"><i class='bx bx-square'></i></div>
+                        <div class="parent-icon"><i class='lni lni-emoji-happy'></i></div>
                         <div class="menu-title">{{ __('Testimonial') }}</div>
                     </a>
                 </li>

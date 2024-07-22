@@ -39,7 +39,7 @@
             </div>
         @endif
 
-        <div class="table-responsive">
+        <div class="">
             <div id="printbar" style="float:right"></div>
             <br>
             <table id="dataTable" class="table mb-0 align-middle" style="width:100%">
@@ -116,6 +116,15 @@
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header text-center">
+        <h5>Example View</h5>
+    </div>
+    <div class="card-body">
+        <img src="../assets/admin/images/example-about-us.png" alt="about-us" style="width: 100%">
     </div>
 </div>
 
