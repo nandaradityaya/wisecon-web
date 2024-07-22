@@ -42,7 +42,7 @@
         <div class="table-responsive">
             <div id="printbar" style="float:right"></div>
             <br>
-            <table id="aboutUs" class="table mb-0 align-middle" style="width:100%">
+            <table id="dataTable" class="table mb-0 align-middle" style="width:100%">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
