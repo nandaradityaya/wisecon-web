@@ -15,7 +15,6 @@
 	<link href="../assets/admin/plugins/select2/css/select2.min.css" rel="stylesheet" />
 	<link href="../assets/admin/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
 	<link href="../assets/admin/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="../assets/admin/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
 	<!-- loader-->
 	<link href="../assets/admin/css/pace.min.css" rel="stylesheet" />
 	<script src="../assets/admin/js/pace.min.js"></script>
