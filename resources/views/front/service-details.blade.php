@@ -103,14 +103,14 @@
               <div class="wid-title">
                 <h3>Other Services</h3>
               </div>
-              <div class="services-category-link">
-                <a href="services-details.html">Infrastructure</a>
-                <a href="services-details.html">Web Developemnt</a>
-                <a href="services-details.html">Mobile App Development</a>
-                <a href="services-details.html">UI/UX Strategy</a>
-                <a href="services-details.html">Excellent Support</a>
-                <a href="services-details.html">Data Security</a>
-              </div>
+              @forelse ($services as $service)
+                <div class="services-category-link">
+                  <a href="{{ route('front.service-details', $service->slug) }}">{{ $service->title }}</a>
+                </div>
+              @empty
+                <p>No Data Yet</p>
+              @endforelse
+              
             </div>
 
             <div class="single-sidebar-widgets">
@@ -119,24 +119,27 @@
               </div>
               <div class="contact-form-widgets">
                 <div class="info contact-details">
-                  <ul>
-                    <li>
-                      <i class="fas fa-map-marker-alt"></i>
-                      <span>
-                        Jl. Ampasit VI No.11A, RT.002/RW.002 Cideng, Jakarta,
-                        Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta
-                        10150
-                      </span>
-                    </li>
-                    <li>
-                      <i class="fas fa-envelope"></i>
-                      <span>info@wisesa-consulting.com</span>
-                    </li>
-                    <li>
-                      <i class="fas fa-phone"></i>
-                      <span>+6221 3514 131</span>
-                    </li>
-                  </ul>
+                  @forelse ($contacts as $contact)
+                    <ul>
+                      <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>
+                          {{ $contact->address }}
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ $contact->email }}</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-phone"></i>
+                        <span>{{ $contact->phone_number }}</span>
+                      </li>
+                    </ul>
+                  @empty
+                    <p>No Data Yet</p>
+                  @endforelse
+                  
                 </div>
               </div>
             </div>

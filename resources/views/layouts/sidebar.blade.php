@@ -9,6 +9,7 @@
 	<link rel="icon" href="../assets/admin/images/ico-wisesa.svg" type="image/png" />
 	<!--plugins-->
 	<link href="../assets/admin/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../assets/admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 	<link href="../assets/admin/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="../assets/admin/libraries/gijgo/css/gijgo.min.css">
 	<link href="../assets/admin/plugins/select2/css/select2.min.css" rel="stylesheet" />
@@ -287,6 +288,7 @@
 	<script src="../assets/admin/js/jquery.min.js"></script>
 	<script src="../assets/admin/plugins/simplebar/js/simplebar.min.js"></script>
 	<script src="../assets/admin/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../assets/admin/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 	<script src="../assets/admin/plugins/select2/js/select2.min.js"></script>
 	<script src="../assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
 	<script src="../assets/admin/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
@@ -415,7 +417,7 @@
 
 
 	<!--app JS-->
-	<script src="assets/js/app.js"></script>
+	<script src="../assets/admin/js/app.js"></script>
 </body>
 
 </html>

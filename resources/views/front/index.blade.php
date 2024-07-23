@@ -74,7 +74,7 @@
               data-aos="fade-up"
               data-aos-delay="150"
             >
-              <a href="services-details.html" class="link"
+              <a href="{{ route('front.service') }}" class="link"
                 ><i class="fas fa-arrow-right"></i
               ></a>
               <div class="icon">
@@ -95,7 +95,7 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <a href="services-details.html" class="link"
+              <a href="{{ route('front.service') }}" class="link"
                 ><i class="fas fa-arrow-right"></i
               ></a>
               <div class="icon">
@@ -120,7 +120,7 @@
               data-aos="fade-up"
               data-aos-delay="250"
             >
-              <a href="services-details.html" class="link"
+              <a href="{{ route('front.service') }}" class="link"
                 ><i class="fas fa-arrow-right"></i
               ></a>
               <div class="icon">
@@ -145,7 +145,7 @@
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <a href="services-details.html" class="link"
+              <a href="{{ route('front.service') }}" class="link"
                 ><i class="fas fa-arrow-right"></i
               ></a>
               <div class="icon">
@@ -260,7 +260,7 @@
                     <img src="{{ Storage::url($service->icon) }}" alt="" />
                   </div>
                   <h3>
-                    <a href="services-details.html">{{ $service->title }}</a>
+                    <a href="{{ route('front.service-details', $service->slug) }}">{{ $service->title }}</a>
                   </h3>
                   <p>
                     {{ $service->excerpt }}

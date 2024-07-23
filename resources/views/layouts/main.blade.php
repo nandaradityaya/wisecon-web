@@ -158,8 +158,8 @@
                   Supported by Expert Knowledge
                 </p>
                 <div class="social-link mt-30">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  {{-- <a href="#"><i class="fab fa-facebook-f"></i></a> --}}
+                  {{-- <a href="#"><i class="fab fa-twitter"></i></a> --}}
                   <a href="#"><i class="fab fa-linkedin"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -190,10 +190,10 @@
                   <h4>Company</h4>
                 </div>
                 <ul>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="career.html">Need a Career</a></li>
-                  <li><a href="#">Working Process</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="{{ route('front.about') }}">About Us</a></li>
+                  <li><a href="{{ route('front.career') }}">Need a Career</a></li>
+                  {{-- <li><a href="#">Working Process</a></li> --}}
+                  <li><a href="{{ route('front.contact') }}">Contact Us</a></li>
                 </ul>
               </div>
             </div>

@@ -47,7 +47,8 @@ class FrontController extends Controller
     public function serviceDetails (Service $service) {
         $services = Service::all();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
-        return view ('front.service-details', compact('service','services', 'companyProfiles')); 
+        $contacts = Contact::orderBy('id')->get();
+        return view ('front.service-details', compact('service','services', 'companyProfiles', 'contacts')); 
     }
 
     public function career () {

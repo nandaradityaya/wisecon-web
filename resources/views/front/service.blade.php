@@ -27,7 +27,7 @@
                   <img src="assets/img/icon/ic_server.svg" alt="" />
                 </div>
                 <h3>
-                  <a href="services-details.html">{{ $service->title }}</a>
+                  <a href="{{ route('front.service-details', $service->slug) }}">{{ $service->title }}</a>
                 </h3>
                 <p>
                   {{ $service->excerpt }}
