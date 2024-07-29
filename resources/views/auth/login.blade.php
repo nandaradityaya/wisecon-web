@@ -5,26 +5,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--favicon-->
-    <link rel="icon" href="../assets/admin/images/ico-wisesa.svg" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/admin/images/ico-wisesa.svg')}}" type="image/png" />
     <!--plugins-->
-    <link href="../assets/admin/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-    <link href="../assets/admin/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/admin/libraries/gijgo/css/gijgo.min.css" />
-    <link href="../assets/admin/plugins/select2/css/select2.min.css" rel="stylesheet" />
-    <link href="../assets/admin/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
-    <link href="../assets/admin/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/admin/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css" />
+    <link href="{{ asset('assets/admin/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/libraries/gijgo/css/gijgo.min.css')}}" />
+    <link href="{{ asset('assets/admin/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/plugins/select2/css/select2-bootstrap4.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css')}}" />
     <!-- loader-->
-    <link href="../assets/admin/css/pace.min.css" rel="stylesheet" />
-    <script src="../assets/admin/js/pace.min.js"></script>
+    <link href="{{ asset('assets/admin/css/pace.min.css')}}" rel="stylesheet" />
+    <script src="{{ asset('assets/admin/js/pace.min.js')}}"></script>
     <!-- Bootstrap CSS -->
-    <link href="../assets/admin/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../assets/admin/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/css/bootstrap-extended.css')}}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-    <link href="../assets/admin/css/app.css" rel="stylesheet" />
-    <link href="../assets/admin/css/icons.css" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/css/app.css')}}" rel="stylesheet" />
+    <link href="{{ asset('assets/admin/css/icons.css')}}" rel="stylesheet" />
     <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="../assets/admin/css/header-colors.css" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/header-colors.css')}}" />
     <title>Wisesa Consulting</title>
 </head>
 
@@ -36,7 +36,7 @@
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
                     <div class="col mx-auto">
                         <div class="mb-4 text-center">
-                            <img src="assets/images/logo-img.png" width="180" alt="" />
+                            <img src="{{asset('assets/images/logo-img.png')}}" width="180" alt="" />
                         </div>
                         <div class="card">
                             <div class="card-body">
@@ -97,14 +97,14 @@
     </div>
     <!--end wrapper-->
     <!-- Bootstrap JS -->
-    <script src="../assets/admin/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/admin/js/bootstrap.bundle.min.js')}}"></script>
     <!--plugins-->
-    <script src="../assets/admin/js/jquery.min.js"></script>
-    <script src="../assets/admin/plugins/simplebar/js/simplebar.min.js"></script>
-    <script src="../assets/admin/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="../assets/admin/plugins/select2/js/select2.min.js"></script>
-    <script src="../assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/admin/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{ asset('assets/admin/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/admin/plugins/simplebar/js/simplebar.min.js')}}"></script>
+    <script src="{{ asset('assets/admin/plugins/metismenu/js/metisMenu.min.js')}}"></script>
+    <script src="{{ asset('assets/admin/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
     <!--Password show & hide js -->
     <script>
         $(document).ready(function () {

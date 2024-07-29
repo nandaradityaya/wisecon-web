@@ -3407,13 +3407,6 @@ input::placeholder {
     font-weight: 500;
 }
 
-.body-psikotest {
-    /* background-image: url("../images/bg-img.jpg"); */
-    background: linear-gradient(to right, #1e2a5d, #2ec1be);
-    background-image: url("../assets/images/gallery/bg-psikotest.jpg");
-    background-size: cover;
-}
-
 .icon-plus-bg {
     position: absolute;
     right: 1%;
