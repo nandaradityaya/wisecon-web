@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="row text-center">
+      <div class="row justify-content-center text-center">
         @forelse ($services as $service)
           <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
             <div class="single-our-service style-2">

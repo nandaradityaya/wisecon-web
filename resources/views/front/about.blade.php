@@ -161,7 +161,7 @@
                                         </a>
                                     </h5>
                                 </div>
-                                <div id="faq-{{ $faq->id }}" class="collapse" data-parent="#accordion">
+                                <div id="faq-{{ $faq->id }}" class="collapse  @if($faq->id == 2) show @endif" data-parent="#accordion">
                                     <div class="card-body">
                                         {{ $faq->answer }}
                                     </div>

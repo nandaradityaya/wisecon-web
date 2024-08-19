@@ -29,13 +29,19 @@
         </div>
         @endif
       <div class="row">
-        <div class="col-12 col-lg-8" data-aos="fade-right">
+        <div class="col-12 col-lg-12" data-aos="fade-right">
           <div class="blog-post-details border-wrap">
             <div class="single-blog-post post-details">
               <div class="post-content">
-                <div class="post-cat">
-                  <a href="#">{{ $career->category }}</a>
+                <div class="d-flex justify-content-between">
+                  <div class="post-cat">
+                    <a href="#">{{ $career->category }}</a>
+                  </div>
+                  <a type="button" href="#applyNow" class="theme-btn">
+                    Apply Now
+                  </a>
                 </div>
+                
                 <h2>{{ $career->title }}</h2>
                 <div class="post-meta">
                   <span class="mb-4"><i class="fal fa-map-marker-alt"></i>{{ $career->location }}</span>
@@ -66,7 +72,7 @@
 
               </div>
 
-              <div class="row mt-4">
+              <div class="row mt-4" id="applyNow">
                 <div class="col-12 text-center mb-20">
                   <div class="section-title">
                     <h3>
@@ -125,22 +131,6 @@
               </div>
             </div>
 
-          </div>
-        </div>
-       
-      </div>
-      <div class="col-12 col-lg-4" data-aos="fade-left">
-        <div class="main-sidebar">
-          <div class="single-sidebar-widget author-box-widegts">
-            <div class="wid-title">
-              <h3>How can we help you</h3>
-            </div>
-            <div class="author-info text-center">
-              <p class="mb-3">
-                Reach out to Wisesa Consulting at our office or send us an online business inquiry.
-              </p>
-              <a href="{{ route('front.contact') }}" class="theme-btn">Contact Us <i class="fal fa-phone"></i></a>
-            </div>
           </div>
         </div>
       </div>

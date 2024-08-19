@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApplicationController extends Controller
 {
@@ -61,6 +62,17 @@ class ApplicationController extends Controller
      */
     public function destroy(Application $application)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $application->delete(); 
+            DB::commit(); 
+
+            return redirect()->route('admin.applications.index')->with('success', 'Congrats! You successfully delete data.');
+            
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('admin.applications.index')->with('error', 'something error'); 
+        }
     }
 }

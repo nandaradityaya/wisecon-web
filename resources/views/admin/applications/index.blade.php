@@ -56,6 +56,7 @@
                                     <a href="{{ Storage::url($application->resume) }}" class="text-primary bg-light-primary border-0 me-3" download>
                                         <i class="bx bxs-download"></i>
                                     </a>
+                                    <a type="button" class="text-danger bg-light-danger border-0" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $application->id }}"><i class="bx bxs-trash"></i></a> 
                                 </div>
                             @else
                                 No Resume
@@ -65,6 +66,33 @@
                     @endforeach
                 </tbody>
             </table>
+
+            @foreach ($applications as $application)
+
+                <!-- Modal Box Delete -->
+                <div class="modal fade" id="modalDelete{{ $application->id }}" tabindex="-1" aria-labelledby="modalDeleteLabel{{ $application->id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalDeleteLabel{{ $application->id }}">Delete Data</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this application?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary radius-8" data-bs-dismiss="modal">Cancel</button>
+                                <form method="POST" action="{{ route('admin.applications.destroy', $application) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger radius-8">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
 </div>

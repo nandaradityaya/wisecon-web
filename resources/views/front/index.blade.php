@@ -305,7 +305,7 @@
           <a href="{{ route('front.product-details', $product->slug) }}" class="success-item">
             <div
               class="thumb bg-cover"
-              style="background-image: url('{{ Storage::url($service->thumbnail) }}')"
+              style="background-image: url('{{ Storage::url($product->thumbnail_1) }}')"
             ></div>
             <div
               class="content d-flex align-items-center justify-content-between"
@@ -377,14 +377,14 @@
     </section>
   </div>
 
-  <div class="client-brand-logo-wrap wisesa-landing-page pt-0">
+  <div class="client-brand-logo-wrap wisesa-landing-page">
     <div class="container">
       <div
         class="brand-carousel-active d-flex justify-content-between owl-carousel"
       >
         @forelse ($clients as $client)
-          <div class="single-client">
-            <img src="{{ Storage::url($client->client_img) }}" alt="" />
+          <div class="single-client d-flex justify-content-center">
+            <img src="{{ Storage::url($client->client_img) }}" alt=""/>
           </div>
         @empty
           <p>

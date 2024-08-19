@@ -108,14 +108,14 @@
                     </nav>
 
                     <div class="action-bar">
-                      <a href="mailto:modinatheme@gmail.com"
+                      <a href="mailto:info@wisesa-consulting.com"
                         ><i class="fal fa-envelope-open-text"></i
-                        >msi@gmail.com</a
+                        >info@wisesa-consulting.com</a
                       >
-                      <a href="tel:123-456-7890"
-                        ><i class="fal fa-phone"></i>021-123-456</a
+                      <a href="tel:+62213514131"
+                        ><i class="fal fa-phone"></i>+6221 3514 131</a
                       >
-                      <a href="contact.html" class="d-btn theme-btn black"
+                      <a href="{{ route('front.contact') }}" class="d-btn theme-btn black"
                         >Consultancy</a
                       >
                     </div>
