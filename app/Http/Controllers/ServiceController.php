@@ -57,27 +57,27 @@ class ServiceController extends Controller
 
             $service = Service::create($validated); 
 
-            // cek keyfetrues
-            if(!empty($validated['key_features'])) {
-                // looping for insert data
-                foreach($validated['key_features'] as $keyfeatureText) {
-                    // langsung ambil dan create key_features karna dia berelasi
-                    $service->key_features()->create([
-                        'body' => $keyfeatureText
-                    ]);
-                }
-            }
+            // // cek keyfetrues
+            // if(!empty($validated['key_features'])) {
+            //     // looping for insert data
+            //     foreach($validated['key_features'] as $keyfeatureText) {
+            //         // langsung ambil dan create key_features karna dia berelasi
+            //         $service->key_features()->create([
+            //             'body' => $keyfeatureText
+            //         ]);
+            //     }
+            // }
 
-            // cek our approaches
-            if(!empty($validated['our_approaches'])) {
-                // looping for insert data
-                foreach($validated['our_approaches'] as $ourApproachesText) {
-                    // langsung ambil dan create our_approaches karna dia berelasi
-                    $service->our_approaches()->create([
-                        'body' => $ourApproachesText
-                    ]);
-                }
-            }
+            // // cek our approaches
+            // if(!empty($validated['our_approaches'])) {
+            //     // looping for insert data
+            //     foreach($validated['our_approaches'] as $ourApproachesText) {
+            //         // langsung ambil dan create our_approaches karna dia berelasi
+            //         $service->our_approaches()->create([
+            //             'body' => $ourApproachesText
+            //         ]);
+            //     }
+            // }
         });
 
         return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully added new service.');
@@ -127,31 +127,31 @@ class ServiceController extends Controller
 
             $service->update($validated); 
 
-            // cek keyfeatures
-            if(!empty($validated['key_features'])) {
-                $service->key_features()->delete(); // delete first and update key_features
+            // // cek keyfeatures
+            // if(!empty($validated['key_features'])) {
+            //     $service->key_features()->delete(); // delete first and update key_features
                 
-                // looping
-                foreach($validated['key_features'] as $keyfeatureText) {
-                    // langsung ambil dan create key_features karna dia berelasi
-                    $service->key_features()->create([
-                        'body' => $keyfeatureText
-                    ]);
-                }
-            }
+            //     // looping
+            //     foreach($validated['key_features'] as $keyfeatureText) {
+            //         // langsung ambil dan create key_features karna dia berelasi
+            //         $service->key_features()->create([
+            //             'body' => $keyfeatureText
+            //         ]);
+            //     }
+            // }
 
-            // cek our approaches
-            if(!empty($validated['our_approaches'])) {
-                $service->our_approaches()->delete(); // delete first and update our_approaches
+            // // cek our approaches
+            // if(!empty($validated['our_approaches'])) {
+            //     $service->our_approaches()->delete(); // delete first and update our_approaches
                 
-                // looping
-                foreach($validated['our_approaches'] as $ourApproachesText) {
-                    // langsung ambil dan create our_approaches karna dia berelasi
-                    $service->our_approaches()->create([
-                        'body' => $ourApproachesText
-                    ]);
-                }
-            }
+            //     // looping
+            //     foreach($validated['our_approaches'] as $ourApproachesText) {
+            //         // langsung ambil dan create our_approaches karna dia berelasi
+            //         $service->our_approaches()->create([
+            //             'body' => $ourApproachesText
+            //         ]);
+            //     }
+            // }
         });
 
         return redirect()->route('admin.services.index')->with('success', 'Congrats! You successfully edit service.');

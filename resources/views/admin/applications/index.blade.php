@@ -36,6 +36,7 @@
                         <th>Email</th>
                         <th>Phone Number</th>
                         <th>Position</th>
+                        <th>Date</th>
                         <th>Resume</th>
                     </tr>
                 </thead>
@@ -48,6 +49,7 @@
                         <td>{{ $application->email }}</td>
                         <td>{{ $application->phone_number }}</td>
                         <td>{{ optional($application->career)->title }}</td>
+                        <td>{{ $application->created_at->format('j M Y') }}</td>
                         <td>
                             @if($application->resume)
                                 <div class="d-flex order-actions">

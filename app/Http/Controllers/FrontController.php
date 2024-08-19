@@ -52,7 +52,7 @@ class FrontController extends Controller
     }
 
     public function career () {
-        $careers = Career::orderBy('id')->get();
+        $careers = Career::orderByDesc('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
         $services = Service::orderBy('id')->get();
         return view ('front.career', compact(['careers', 'companyProfiles', 'services'])); 
@@ -66,7 +66,7 @@ class FrontController extends Controller
     }
 
     public function product () {
-        $products = Product::orderBy('id')->get();
+        $products = Product::orderByDesc('id')->get();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
         $services = Service::orderBy('id')->get();
         return view ('front.product', compact('products', 'companyProfiles', 'services')); 

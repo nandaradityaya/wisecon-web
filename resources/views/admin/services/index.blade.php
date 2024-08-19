@@ -65,8 +65,8 @@
                         <th>Icon</th>
                         <th>excerpt</th>
                         <th>Body</th>
-                        <th>Key Feature</th>
-                        <th>Our Approaches</th>
+                        {{-- <th>Key Feature</th>
+                        <th>Our Approaches</th> --}}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -83,8 +83,8 @@
                             <img src="{{ Storage::url($service->icon) }}" width="100" alt="">
                         </td>
                         <td>{{ $service->excerpt }}</td>
-                        <td>{{ $service->body }}</td>
-                        <td>
+                        <td>{!! $service->body !!}</td>
+                        {{-- <td>
                             @forelse ($service->key_features as $keyfeature)
                                 <ul>
                                     <li>{{ $keyfeature->body }}</li>
@@ -99,7 +99,7 @@
                                 </ul>
                             @empty
                             @endforelse
-                        </td>
+                        </td> --}}
                         <td>
                             <div class="d-flex order-actions">
                                 <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $service->id }}"><i class="bx bxs-edit"></i></a>
@@ -147,9 +147,9 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="body" class="form-label">Description</label>
-                                        <textarea type="text" class="form-control" id="body" name="body" rows="3">{{ $service->body }}</textarea>
+                                        <textarea type="text" class="form-control rich-text" id="body" name="body" rows="3">{{ $service->body }}</textarea>
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="key-features" class="form-label">Key Features</label>
                                         <div id="edit-key-features-container">
                                             @forelse($service->key_features as $keyfeature)
@@ -170,7 +170,7 @@
                                             @endforelse
                                         </div>
                                         <button type="button" class="btn btn-primary mt-2" id="edit-our-approaches">+</button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary radius-6"
@@ -241,9 +241,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Description</label>
-                        <textarea type="text" class="form-control" id="body" placeholder="Description..." name="body" rows="3"></textarea>
+                        <textarea type="text" class="form-control rich-text" id="body" placeholder="Description..." name="body" rows="3"></textarea>
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="body" class="form-label">Key Features</label>
                         <div id="key-features-container">
                             <input type="text" class="form-control mb-2" placeholder="Write your copywriting" name="key_features[]">
@@ -256,7 +256,7 @@
                             <input type="text" class="form-control mb-2" placeholder="Write your copywriting" name="our_approaches[]">
                         </div>
                         <button type="button" class="btn btn-primary" id="add-our-approaches">+</button>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary radius-6"

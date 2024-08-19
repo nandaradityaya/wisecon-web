@@ -15,10 +15,10 @@
             <div
               class="btn-wraper d-flex flex-wrap justify-content-xl-end mt-2 mt-md-4 mt-xl-0"
             >
-              <a href="contact.html" class="theme-btn"
+              <a href="{{ route('front.contact') }}" class="theme-btn"
                 >Get a quote <i class="icon-arrow-right-1"></i
               ></a>
-              <a href="about.html" class="theme-btn"
+              <a href="{{ route('front.about') }}" class="theme-btn"
                 >read more <i class="icon-arrow-right-1"></i
               ></a>
             </div>

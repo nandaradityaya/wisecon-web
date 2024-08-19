@@ -65,8 +65,8 @@
                         <th>Body</th>
                         <th>Category</th>
                         <th>Location</th>
-                        <th>Job Description</th>
-                        <th>Requirement</th>
+                        {{-- <th>Job Description</th>
+                        <th>Requirement</th> --}}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -79,10 +79,10 @@
                         <td>
                             <img src="{{ Storage::url($career->thumbnail) }}" width="100" alt="">
                         </td>
-                        <td>{{ $career->body }}</td>
+                        <td>{!! $career->body !!}</td>
                         <td>{{ $career->category }}</td>
                         <td>{{ $career->location }}</td>
-                        <td>
+                        {{-- <td>
                             @forelse ($career->job_descriptions as $job_description)
                                 <ul>
                                     <li>{{ $job_description->job_desc }}</li>
@@ -97,7 +97,7 @@
                                 </ul>
                             @empty
                             @endforelse
-                        </td>
+                        </td> --}}
                         <td>
                             <div class="d-flex order-actions">
                                 <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $career->id }}"><i class="bx bxs-edit"></i></a>
@@ -144,9 +144,9 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="body" class="form-label">Body</label>
-                                        <textarea type="text" class="form-control" id="body" rows="3" name="body">{{ $career->body }}</textarea>
+                                        <textarea type="text" class="form-control rich-text" id="body" rows="3" name="body">{{ $career->body }}</textarea>
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="job-descriptions" class="form-label">Job Descriptions</label>
                                         <div id="edit-job-descriptions-container">
                                             @forelse($career->job_descriptions as $job_description)
@@ -167,7 +167,7 @@
                                             @endforelse
                                         </div>
                                         <button type="button" class="btn btn-primary mt-2" id="edit-requirements">+</button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary radius-6"
@@ -239,9 +239,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Body</label>
-                        <textarea type="text" class="form-control" id="body" placeholder="Body..." rows="3" name="body"></textarea>
+                        <textarea type="text" class="form-control rich-text" id="body" placeholder="Body..." rows="3" name="body"></textarea>
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="body" class="form-label">Job Description</label>
                         <div id="job-descriptions-container">
                             <input type="text" class="form-control mb-2" placeholder="Job Description..." name="job_descriptions[]">
@@ -254,7 +254,7 @@
                             <input type="text" class="form-control mb-2" placeholder="Requirement..." name="requirements[]">
                         </div>
                         <button type="button" class="btn btn-primary" id="add-requirements">+</button>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary radius-6"

@@ -39,8 +39,10 @@
                 <h2>{{ $career->title }}</h2>
                 <div class="post-meta">
                   <span class="mb-4"><i class="fal fa-map-marker-alt"></i>{{ $career->location }}</span>
+
+                    <div>{!! $career->body !!}</div>
                
-                <div class="job-desc mb-4">
+                {{-- <div class="job-desc mb-4">
                   <h4>Job Description</h4>
                   @forelse ($career->job_descriptions as $job_description)
                     <ul>
@@ -60,7 +62,7 @@
                         </ul>
                     @empty
                     @endforelse
-                </div>
+                </div> --}}
 
               </div>
 
@@ -77,13 +79,13 @@
                   <div class="contact-form">
                     <form action="{{ route('front.apply.store') }}" method="POST" enctype="multipart/form-data" class="row conact-form">
                       @csrf
-                      <div class="col-md-6 col-12">
+                      <div class="col-md-12 col-12">
                         <div class="single-personal-info">
                           <label for="fname">Full Name</label>
                           <input type="text" id="fname" name="name" placeholder="Enter Name" required />
                         </div>
                       </div>
-                      <div class="col-md-6 col-12">
+                      <div class="col-md-12 col-12">
                         <div class="single-personal-info">
                           <label for="email">Email Address</label>
                           <input type="email" id="email" name="email" placeholder="Enter Email Address" required />
@@ -137,7 +139,7 @@
               <p class="mb-3">
                 Reach out to Wisesa Consulting at our office or send us an online business inquiry.
               </p>
-              <a href="contact.html" class="theme-btn">Contact Us <i class="fal fa-phone"></i></a>
+              <a href="{{ route('front.contact') }}" class="theme-btn">Contact Us <i class="fal fa-phone"></i></a>
             </div>
           </div>
         </div>

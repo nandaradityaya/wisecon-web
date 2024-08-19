@@ -27,8 +27,8 @@ class UpdateServiceRequest extends FormRequest
             'icon' => ['sometimes', 'image', 'mimes:png,jpg,jpeg,svg'],
             'excerpt' => ['required', 'string'],
             'body' => ['required', 'string'],
-            'key_features.*' => ['required', 'string'],
-            'our_approaches.*' => ['required', 'string'],
+            // 'key_features.*' => ['required', 'string'],
+            // 'our_approaches.*' => ['required', 'string'],
         ];
     }
 }

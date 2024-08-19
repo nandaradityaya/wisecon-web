@@ -19,13 +19,13 @@ class Career extends Model
         'location',
     ];
 
-    public function job_descriptions() {
-        return $this->hasMany(JobDescription::class);
-    }
+    // public function job_descriptions() {
+    //     return $this->hasMany(JobDescription::class);
+    // }
 
-    public function requirements() {
-        return $this->hasMany(Requirement::class);
-    }
+    // public function requirements() {
+    //     return $this->hasMany(Requirement::class);
+    // }
 
     public function applications()
     {

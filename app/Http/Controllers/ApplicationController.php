@@ -12,7 +12,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $applications = Application::with('career')->get();
+        $applications = Application::orderByDesc('id')->with('career')->get();
         return view('admin.applications.index', compact('applications'));
     }
 

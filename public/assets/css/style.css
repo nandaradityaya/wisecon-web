@@ -7998,7 +7998,8 @@ header.stop .top-header {
 }
 .single-case-study .features-thumb {
   border-radius: 7px;
-  height: 285px;
+  /* height: 285px; */
+  height: 375px;
   background-color: #eee;
 }
 .single-case-study .content {

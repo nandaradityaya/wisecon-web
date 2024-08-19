@@ -10,7 +10,7 @@
                 <a class="theme-btn-sm mb-15 aos-init aos-animate" data-aos="fade-left">ABOUT COMPANY</a>
 
                 <p class="pr-lg-5">
-                    {{ $about->body }}
+                    {!! $about->body !!}
                 </p>
             </div>
 

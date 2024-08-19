@@ -50,27 +50,27 @@ class CareerController extends Controller
 
             $career = Career::create($validated); 
 
-            // cek job desc
-            if(!empty($validated['job_descriptions'])) {
-                // looping for insert data
-                foreach($validated['job_descriptions'] as $jobdescriptionsText) {
-                    // langsung ambil dan create job_descriptions karna dia berelasi
-                    $career->job_descriptions()->create([
-                        'job_desc' => $jobdescriptionsText
-                    ]);
-                }
-            }
+            // // cek job desc
+            // if(!empty($validated['job_descriptions'])) {
+            //     // looping for insert data
+            //     foreach($validated['job_descriptions'] as $jobdescriptionsText) {
+            //         // langsung ambil dan create job_descriptions karna dia berelasi
+            //         $career->job_descriptions()->create([
+            //             'job_desc' => $jobdescriptionsText
+            //         ]);
+            //     }
+            // }
 
-            // cek requirements
-            if(!empty($validated['requirements'])) {
-                // looping for insert data
-                foreach($validated['requirements'] as $requirementsText) {
-                    // langsung ambil dan create requirements karna dia berelasi
-                    $career->requirements()->create([
-                        'requirement' => $requirementsText
-                    ]);
-                }
-            }
+            // // cek requirements
+            // if(!empty($validated['requirements'])) {
+            //     // looping for insert data
+            //     foreach($validated['requirements'] as $requirementsText) {
+            //         // langsung ambil dan create requirements karna dia berelasi
+            //         $career->requirements()->create([
+            //             'requirement' => $requirementsText
+            //         ]);
+            //     }
+            // }
         });
 
         return redirect()->route('admin.careers.index')->with('success', 'Congrats! You successfully added new service.');
@@ -113,31 +113,31 @@ class CareerController extends Controller
 
             $career->update($validated); 
 
-            // cek job desc
-            if(!empty($validated['job_descriptions'])) {
-                $career->job_descriptions()->delete(); // delete first and update job_descriptions
+            // // cek job desc
+            // if(!empty($validated['job_descriptions'])) {
+            //     $career->job_descriptions()->delete(); // delete first and update job_descriptions
                 
-                // looping
-                foreach($validated['job_descriptions'] as $jobdescriptionText) {
-                    // langsung ambil dan create job_descriptions karna dia berelasi
-                    $career->job_descriptions()->create([
-                        'job_desc' => $jobdescriptionText
-                    ]);
-                }
-            }
+            //     // looping
+            //     foreach($validated['job_descriptions'] as $jobdescriptionText) {
+            //         // langsung ambil dan create job_descriptions karna dia berelasi
+            //         $career->job_descriptions()->create([
+            //             'job_desc' => $jobdescriptionText
+            //         ]);
+            //     }
+            // }
 
-            // cek requirement
-            if(!empty($validated['requirements'])) {
-                $career->requirements()->delete(); // delete first and update requirements
+            // // cek requirement
+            // if(!empty($validated['requirements'])) {
+            //     $career->requirements()->delete(); // delete first and update requirements
                 
-                // looping
-                foreach($validated['requirements'] as $requirementText) {
-                    // langsung ambil dan create requirements karna dia berelasi
-                    $career->requirements()->create([
-                        'requirement' => $requirementText
-                    ]);
-                }
-            }
+            //     // looping
+            //     foreach($validated['requirements'] as $requirementText) {
+            //         // langsung ambil dan create requirements karna dia berelasi
+            //         $career->requirements()->create([
+            //             'requirement' => $requirementText
+            //         ]);
+            //     }
+            // }
         });
 
         return redirect()->route('admin.careers.index')->with('success', 'Congrats! You successfully edit service.');

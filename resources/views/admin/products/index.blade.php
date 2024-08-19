@@ -85,7 +85,7 @@
                         <td>{{ $product->client }}</td>
                         <td>{{ $product->project }}</td>
                         <td>{{ $product->service }}</td>
-                        <td>{{ $product->body }}</td>
+                        <td>{!! $product->body !!}</td>
                         <td>
                             <div class="d-flex order-actions">
                                 <a type="button" class="text-primary bg-light-primary border-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $product->id }}"><i class="bx bxs-edit"></i></a>
@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="body" class="form-label">Description</label>
-                                        <textarea type="text" class="form-control" id="body" name="body" rows="3">{{ $product->body }}</textarea>
+                                        <textarea type="text" class="form-control rich-text" id="body" name="body" rows="3">{{ $product->body }}</textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -223,7 +223,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Description</label>
-                        <textarea type="text" class="form-control" id="body" name="body" rows="3"></textarea>
+                        <textarea type="text" class="form-control rich-text" id="body" name="body" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

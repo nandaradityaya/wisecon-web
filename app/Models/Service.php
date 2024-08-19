@@ -19,11 +19,11 @@ class Service extends Model
         'body',
     ];
 
-    public function key_features() {
-        return $this->hasMany(KeyFeature::class);
-    }
+    // public function key_features() {
+    //     return $this->hasMany(KeyFeature::class);
+    // }
 
-    public function our_approaches() {
-        return $this->hasMany(OurApproach::class);
-    }
+    // public function our_approaches() {
+    //     return $this->hasMany(OurApproach::class);
+    // }
 }

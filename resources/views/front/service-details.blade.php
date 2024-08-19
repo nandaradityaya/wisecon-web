@@ -9,13 +9,13 @@
           data-aos="fade-right"
         >
           <div class="service-details-content">
-            <img src="assets/img/web-development.jpg" alt="" />
+            <img src='{{ Storage::url($service->thumbnail) }}' alt="" />
             <h1>{{ $service->title }}</h1>
             <p>
-                {{ $service->body }}
+                {!! $service->body !!}
             </p>
 
-            <h4>Our Approach</h4>
+            {{-- <h4>Our Approach</h4>
             <p>
                 We follow a comprehensive approach to web development, ensuring
                 each project is executed with precision and efficiency. Our
@@ -91,7 +91,7 @@
               Ready to take your online presence to the next level? Contact us
               today to discuss your web development needs and discover how we
               can help you achieve your business goals.
-            </p>
+            </p> --}}
           </div>
         </div>
         <div

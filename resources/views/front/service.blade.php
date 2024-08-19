@@ -24,7 +24,7 @@
               ></div>
               <div class="content">
                 <div class="icon">
-                  <img src="assets/img/icon/ic_server.svg" alt="" />
+                  <img src="{{ Storage::url($service->icon) }}" alt="" />
                 </div>
                 <h3>
                   <a href="{{ route('front.service-details', $service->slug) }}">{{ $service->title }}</a>

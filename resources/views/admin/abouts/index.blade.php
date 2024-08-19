@@ -57,7 +57,7 @@
                     @foreach ($abouts as $about)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $about->body }}</td>
+                            <td>{!! $about->body !!}</td>
                             <td>
                                 <img src="{{ Storage::url($about->img_about) }}" width="100" alt="image about">
                             </td>
@@ -87,7 +87,7 @@
                                         <div class="modal-body">
                                             <div class="mb-3">
                                                 <label for="aboutUs{{ $about->id }}" class="form-label">About Us</label>
-                                                <textarea class="form-control" id="aboutUs{{ $about->id }}" name="body"  rows="3">{{ $about->body }}</textarea>
+                                                <textarea class="form-control rich-text" id="aboutUs{{ $about->id }}" name="body"  rows="3">{{ $about->body }}</textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="formFile{{ $about->id }}" class="form-label">Image</label>
@@ -145,7 +145,7 @@
                         
                     <div class="mb-3">
                         <label for="aboutUs" class="form-label">About Us</label>
-                        <textarea rows="3" class="form-control" id="aboutUs" placeholder="About Us..." name="body"></textarea>
+                        <textarea rows="3" class="form-control rich-text" id="aboutUs" placeholder="About Us..." name="body"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Image</label>

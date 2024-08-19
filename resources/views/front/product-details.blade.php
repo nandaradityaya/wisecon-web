@@ -32,7 +32,7 @@
               <div class="case-details-content mr-0 mr-lg-5">
                 <h2>{{ $product->name }}</h2>
                 <p>
-                  {{ $product->body }}
+                  {!! $product->body !!}
                 </p>
 
                 

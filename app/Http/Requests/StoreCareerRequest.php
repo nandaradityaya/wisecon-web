@@ -27,8 +27,8 @@ class StoreCareerRequest extends FormRequest
             'body' => ['required', 'string'],
             'category' => ['required', 'string'],
             'location' => ['required', 'string'],
-            'job_descriptions.*' => ['required', 'string'],
-            'requirements.*' => ['required', 'string'],
+            // 'job_descriptions.*' => ['required', 'string'],
+            // 'requirements.*' => ['required', 'string'],
         ];
     }
 }

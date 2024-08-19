@@ -413,6 +413,16 @@
 			container.appendChild(input);
 		});
 	</script>
+	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+	<script>
+        document.querySelectorAll('.rich-text').forEach((textarea) => {
+            ClassicEditor
+                .create(textarea)
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script>
 
 
 	<!--app JS-->
