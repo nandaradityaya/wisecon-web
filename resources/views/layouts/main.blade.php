@@ -67,8 +67,8 @@
                 </ul>
               </div>
             </div>
-            <div class="header-right d-flex align-items-center">
-              @if($companyProfiles->isNotEmpty())
+            <div class="header-right d-xl-none d-flex align-items-center">
+              {{-- @if($companyProfiles->isNotEmpty())
                   @foreach($companyProfiles as $companyProfile)
                       <div class="header-btn-cta">
                           <a href="{{ asset('storage/'.$companyProfile->compro) }}" class="theme-btn" download>
@@ -82,7 +82,7 @@
                         Company Profile <i class="fas fa-file-pdf"></i>
                     </a>
                 </div>
-              @endif
+              @endif --}}
               
               <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
                 <div class="mobile-nav-wrap">
