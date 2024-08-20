@@ -197,11 +197,7 @@
                 </p>
               </div>
 
-              <div class="rate-content-grid d-flex justify-content-between">
-                <div class="single-rate-item" data-aos="fade-up">
-                  <h3>50+</h3>
-                  <p>Active Status Clients</p>
-                </div>
+              <div class="rate-content-grid d-flex gap-5">
                 <div
                   class="single-rate-item"
                   data-aos="fade-up"
@@ -330,7 +326,7 @@
       </div>
     </section>
 
-    <section class="testimonial-wrapper wisesa-landing-page">
+    {{-- <section class="testimonial-wrapper wisesa-landing-page">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
@@ -374,7 +370,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
   </div>
 
   <div class="client-brand-logo-wrap wisesa-landing-page">

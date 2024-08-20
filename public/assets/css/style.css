@@ -8092,7 +8092,7 @@ header.stop .top-header {
 }
 .case-study-2 .single-case-item .case-thumb,
 .case-study-items .single-case-item .case-thumb {
-    height: 370px;
+    height: 250px;
     border-radius: 7px;
     position: relative;
 }

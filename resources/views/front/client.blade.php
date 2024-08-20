@@ -3,7 +3,7 @@
 @section('content')
     <section class="case-study-wrapper section-padding">
       <div class="container">
-        <div class="section-title text-center" data-aos="fade-up">
+        <div class="section-title text-center m-4" data-aos="fade-up">
           <h1>Our Clients</h1>
         </div>
         <div class="row case-study-2" data-aos="fade-up" data-aos-delay="150">
@@ -15,8 +15,7 @@
                       src="{{ Storage::url($client->client_img) }}"
                       class="radius-10"
                       alt=""
-                      width="564"
-                      height="376"
+                      width="180"
                     />
                   </div>
                   <div class="contents">
