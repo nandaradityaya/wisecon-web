@@ -67,7 +67,7 @@
                 </ul>
               </div>
             </div>
-            <div class="header-right d-xl-none d-flex align-items-center">
+            <div class="header-right d-flex align-items-center">
               {{-- @if($companyProfiles->isNotEmpty())
                   @foreach($companyProfiles as $companyProfile)
                       <div class="header-btn-cta">
@@ -83,6 +83,11 @@
                     </a>
                 </div>
               @endif --}}
+              <div class="header-btn-cta">
+                <a href="https://wa.me/6287877614300" target="_blank" class="theme-btn">
+                    Consultancy <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
               
               <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
                 <div class="mobile-nav-wrap">

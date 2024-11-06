@@ -15,7 +15,7 @@
                       src="{{ Storage::url($client->client_img) }}"
                       class="radius-10"
                       alt=""
-                      width="180"
+                      width="160"
                     />
                   </div>
                   <div class="contents">

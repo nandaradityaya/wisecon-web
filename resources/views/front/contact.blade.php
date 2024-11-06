@@ -68,6 +68,10 @@
                         <i class="fas fa-phone"></i>
                         <span>{{ $contact->phone_number }}</span>
                       </li>
+                      <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+62 878 7761 4300</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
