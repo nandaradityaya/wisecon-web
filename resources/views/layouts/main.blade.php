@@ -35,7 +35,7 @@
           <div class="d-flex align-items-center justify-content-between">
             <div class="header-logo">
               <div class="logo">
-                <a href="index.html">
+                <a href="{{ route('front.index') }}">
                   <img
                     src="{{ asset('assets/img/logo-wisesa.svg')}}"
                     alt="logo"
@@ -44,7 +44,7 @@
                 </a>
               </div>
               <div class="logo-2">
-                <a href="index.html">
+                <a href="{{ route('front.index') }}">
                   <img
                     src="{{ asset('assets/img/logo-wisesa.svg')}}"
                     alt="logo"
@@ -85,7 +85,7 @@
               @endif --}}
               <div class="header-btn-cta">
                 <a href="https://wa.me/6287877614300" target="_blank" class="theme-btn">
-                    Consultancy <i class="fab fa-whatsapp"></i>
+                    Contact Us <i class="fab fa-whatsapp"></i>
                 </a>
               </div>
               
@@ -121,7 +121,7 @@
                         ><i class="fal fa-phone"></i>+6221 3514 131</a
                       >
                       <a href="{{ route('front.contact') }}" class="d-btn theme-btn black"
-                        >Consultancy</a
+                        >Contact Us</a
                       >
                     </div>
                   </div>
@@ -143,7 +143,7 @@
             <div class="col-md-6 col-xl-3 col-12 pr-xl-4">
               <div class="single-footer-wid site_footer_widget">
                 <div class="footer-logo">
-                  <a href="index.html">
+                  <a href="{{ route('front.index') }}">
                     <img
                       src="{{ asset('assets/img/logo-wisesa.svg')}}"
                       alt="logo wisesa consulting"
@@ -151,7 +151,7 @@
                   </a>
                 </div>
                 <div class="footer-logo-2">
-                  <a href="index.html">
+                  <a href="{{ route('front.index') }}">
                     <img
                       src="{{ asset('assets/img/logo-wisesa.svg')}}"
                       alt="logo wisesa consulting"
@@ -209,7 +209,7 @@
       <div class="footer-bottom">
         <div class="container text-center">
           <div class="footer-bottom-content">
-            © 2024 <a href="index.html">Wisecon</a>. All Rights Reserved
+            © 2024 <a href="{{ route('front.index') }}">Wisecon</a>. All Rights Reserved
           </div>
         </div>
       </div>
@@ -224,7 +224,7 @@
     <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('assets/js/isotope.pkgd.min.js')}}"></script>
     <script src="{{ asset('assets/js/imageload.min.js')}}"></script>
-    <script src="{{ asset('assets/js/scrollUp.min.js')}}"></script>
+    {{-- <script src="{{ asset('assets/js/scrollUp.min.js')}}"></script> --}}
     <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('assets/js/magnific-popup.min.js')}}"></script>
     <script src="{{ asset('assets/js/counterup.min.js')}}"></script>

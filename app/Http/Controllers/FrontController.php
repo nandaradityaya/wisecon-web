@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Apotek;
 use App\Models\Application;
 use App\Models\Career;
 use App\Models\Client;
@@ -72,6 +73,13 @@ class FrontController extends Controller
         return view ('front.product', compact('products', 'companyProfiles', 'services')); 
     }
 
+    public function productApotek () {
+        $products = Product::orderByDesc('id')->get();
+        $companyProfiles = CompanyProfile::orderBy('id')->get();
+        $services = Service::orderBy('id')->get();
+        return view ('front.product-apotek', compact('products', 'companyProfiles', 'services')); 
+    }
+
     public function productDetails (Product $product) {
         $products = Product::all();
         $companyProfiles = CompanyProfile::orderBy('id')->get();
@@ -110,6 +118,26 @@ class FrontController extends Controller
             'phone_number' => $request->phone_number,
             'subject' => $request->subject,
             'message' => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'Your message has been successfully sent!');
+    }
+
+    public function storeApotek(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'pic' => 'required|string',
+            'phone_number' => 'required|string',
+        ]);
+
+        // Save application to the database
+        Apotek::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'pic' => $request->pic,
+            'phone_number' => $request->phone_number,
         ]);
 
         return redirect()->back()->with('success', 'Your message has been successfully sent!');

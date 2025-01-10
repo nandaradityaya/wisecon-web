@@ -28,6 +28,21 @@
         @empty
             
         @endforelse
+        <div class="col-xl-4 col-md-6 grid-item">
+          <div class="single-case-study">
+            <div
+              class="features-thumb bg-cover"
+              style="background-image: url('assets/img/WisePOS.jpg')"
+            ></div>
+            <div class="content">
+              <h3>WisePOS</h3>
+              <p>POS System</p>
+              <a href="{{ route('front.product-apotek') }}"
+                >Read more <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
         
       </div>
     </div>

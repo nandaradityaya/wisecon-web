@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ApotekController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ClientController;
@@ -24,6 +25,7 @@ Route::get('/service/{service:slug}', [FrontController::class, 'serviceDetails']
 Route::get('/career', [FrontController::class, 'career'])->name('front.career');
 Route::get('/career/{career:slug}', [FrontController::class, 'careerDetails'])->name('front.career-details');
 Route::get('/product', [FrontController::class, 'product'])->name('front.product');
+Route::get('/product-apotek', [FrontController::class, 'productApotek'])->name('front.product-apotek');
 Route::get('/product/{product:slug}', [FrontController::class, 'productDetails'])->name('front.product-details');
 Route::get('/client', [FrontController::class, 'client'])->name('front.client');
 Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact');
@@ -31,6 +33,7 @@ Route::get('/apply', [FrontController::class, 'showApplicationForm'])->name('fro
 
 Route::post('/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
 Route::post('/contact', [FrontController::class, 'storeMessage'])->name('front.message.store');
+Route::post('/product-apotek', [FrontController::class, 'storeApotek'])->name('front.apotek.store');
 // Route::post('/career/{career:slug}/apply', [FrontController::class, 'storeApplication'])->name('front.apply.store');
 
 Route::get('/admin/homes', function () {
@@ -54,6 +57,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('products', ProductController::class)->middleware('role:owner'); 
         Route::resource('applications', ApplicationController::class)->middleware('role:owner');
         Route::resource('messages', MessageController::class)->middleware('role:owner');
+        Route::resource('apoteks', ApotekController::class)->middleware('role:owner');
         Route::resource('companyProfiles', CompanyProfileController::class)->middleware('role:owner');
         Route::resource('testimonials', TestimonialController::class)->middleware('role:owner');
     });
